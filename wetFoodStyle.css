@@ -63,7 +63,7 @@
 }
 .WindowNews .SeparateLink a{
     color: var(--background-color2);
-    font-size: 14pt;
+    font-size: 10pt;
     text-decoration: none;
 }
 .WindowNews .SeparateLink a:hover{
@@ -72,6 +72,7 @@
 
 .WindowNews  a{
     text-decoration: none;
+    color: var(--background-color2);
 }
 
 .WindowNews #SortFilterPanel{
@@ -99,7 +100,6 @@
 .WindowNews #SortFilterPanel #SortSelectDiv, #SearchFieldDiv{
     justify-content: center;
     flex-grow: 1;
-
 }
 
 .WindowNews #SortFilterPanel #SortButtonDiv{
@@ -122,7 +122,7 @@
     background-color: var(--foreground-color2);
 }
 
-.WindowNews #SortPanesSpacer{
+.WindowNews #SortPanelSpacer{
     color: var(--background-color1);
     margin: 0px;
     margin-left: 1vw;
@@ -166,6 +166,11 @@
     text-decoration: none;
     margin-top: 10px;
     margin-bottom: 0px;
+}
+
+#ProductShow a:link a:active a:visited {
+    text-decoration: none;
+    color: var(--background-color2);
 }
 
 #ProductShow hr{
