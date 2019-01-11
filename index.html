@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Doggy Foody</title>
+    <link rel="stylesheet" type="text/css" href="indexStyle.css">
+    <link rel="shortcut icon" href="./img/doggy_icon.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">
+    <script type="text/javascript" src="./script/index_RecentlyAddedProductsShow.js"></script>
+</head>
+
+<body>
+
+    <!-- Top bar section -->
+    <header>
+        <section class="TopBarButton" id="StoriesSection">
+            <a href="Stories.html"> Doggy Stories </a>
+        </section>
+
+        <section class="TopBarButton" id="ManufacturerSection">
+            <a href="Manufacturers.html"> Manufacturers </a>
+        </section>
+
+        <section class="TopBarButton" id="DryFoodSection">
+            <a href="DryFood.html"> Dry food </a>
+        </section>
+
+        <section class="TopBarButton" id="WetFoodSection">
+            <a href="WetFood.html"> Wet food </a>
+        </section>
+
+    </header> 
+    
+    <!-- Link bar under Top bar-->
+    <div id="LinkBar">
+        <table id="LinkBarTable">
+            <tr>
+                <td>
+                   <a href="SignIn.html"><b>Sign In </b></a>
+                </td>
+                <td class="LinkBarBreak">
+                    |
+                </td>
+                <td>
+                    <a href="SignUp.html"><b> Sign Up</b></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <a href="index.html">
+        <div id="Logo">
+        </div>  
+    </a>
+    
+    <!-- Ad box on the right-->
+    <section id="AdvertSection">
+            <div id="Advert">
+                <a href="AdLink.html"><img src="./img/Ad1.png" alt="Advert"></a>
+            </div>
+        </section>
+        
+    <!-- Main block-->
+    <main>
+
+        <!-- Section of news-->
+        <section class="MainBlockNews">
+
+            <article class="WindowNews">
+                <h1>Welcome!</h1>
+                <p class="Article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elit sed nulla aliquam porta. Cras
+                iaculis ac sapien vitae pharetra. Maecenas auctor ultrices erat, id malesuada mauris pellentesque eu.
+                Fusce fringilla, nisi et blandit congue, nisi erat varius risus, non euismod enim dui quis risus.
+                Vivamus vel neque in ante porta dictum. Phasellus dignissim, massa et vehicula varius, lectus tellus
+                aliquet eros, sit amet placerat tortor neque et tortor. Fusce purus tellus, imperdiet vitae tincidunt
+                venenatis, sollicitudin et lectus.
+                Cras condimentum nulla ultricies ex ullamcorper, vitae consectetur purus fermentum. Nullam posuere
+                sapien et velit efficitur, et auctor mauris ullamcorper. In faucibus fermentum interdum. Duis ultrices
+                placerat sapien, at fermentum neque volutpat porttitor. Mauris metus erat, commodo id mi sit amet,
+                viverra hendrerit neque. Sed eleifend, justo vitae mattis sagittis, lectus dolor rhoncus tellus, sed
+                consequat lorem ex et leo. Nulla facilisi. Maecenas tristique metus tortor, id scelerisque libero
+                luctus eget. Morbi maximus turpis id sapien consectetur, vel convallis nisl bibendum. Aenean in
+                pulvinar dolor. Proin ut odio risus. Pellentesque tristique metus nec quam suscipit, vel volutpat magna
+                ornare. Mauris blandit augue lacus, at consectetur diam imperdiet ac.</p>
+            </article>
+
+            <div class="WindowNews">
+                    <h1>Recently added products</h1>
+                    <div id="RecentlyAddedProductsShow">
+                        <div>
+                            <a id="RecentlyAddedProductsProduct1Link" href="index.html"><img id="RecentlyAddedProductsProduct1Image" src=""></a>
+                            <p id="RecentlyAddedProductsProduct1Name"><b>product 1</b></p>
+                        </div>
+                        <div>
+                            <a id="RecentlyAddedProductsProduct2Link" href="index.html"><img id="RecentlyAddedProductsProduct2Image" src=""></a>
+                            <p id="RecentlyAddedProductsProduct2Name"><b>product 2</b></p>
+                        </div>
+                        <div>
+                            <a id="RecentlyAddedProductsProduct3Link" href="index.html"><img id="RecentlyAddedProductsProduct3Image" src=""></a>
+                            <p id="RecentlyAddedProductsProduct3Name"><b>product 3</b></p>
+                        </div>
+
+                        <script>
+							callApi();
+                        </script>
+
+                    </div>
+                    <div class="SeparateLink">
+                            <a href="Manufacturers.html">» more products «</a>
+                    </div>
+                    <br/>
+            </div>
+
+            <article class="WindowNews">
+                <h1>Recent super important Doggy™ news!</h1>
+                <span class="Date">Date</span>
+                <p class="Article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elit sed nulla aliquam porta. Cras
+                iaculis ac sapien vitae pharetra. Maecenas auctor ultrices erat, id malesuada mauris pellentesque eu.
+                Fusce fringilla, nisi et blandit congue, nisi erat varius risus, non euismod enim dui quis risus.
+                Vivamus vel neque in ante porta dictum. Phasellus dignissim, massa et vehicula varius, lectus tellus
+                aliquet eros, sit amet placerat tortor neque et tortor. Fusce purus tellus, imperdiet vitae tincidunt
+                venenatis, sollicitudin et lectus.
+
+                Cras condimentum nulla ultricies ex ullamcorper, vitae consectetur purus fermentum. Nullam posuere
+                sapien et velit efficitur, et auctor mauris ullamcorper. In faucibus fermentum interdum. Duis ultrices
+                placerat sapien, at fermentum neque volutpat porttitor. Mauris metus erat, commodo id mi sit amet,
+                viverra hendrerit neque. Sed eleifend, justo vitae mattis sagittis, lectus dolor rhoncus tellus, sed
+                consequat lorem ex et leo. Nulla facilisi. Maecenas tristique metus tortor, id scelerisque libero
+                luctus eget. Morbi maximus turpis id sapien consectetur, vel convallis nisl bibendum. Aenean in
+                pulvinar dolor. Proin ut odio risus. Pellentesque tristique metus nec quam suscipit, vel volutpat magna
+                ornare. Mauris blandit augue lacus, at consectetur diam imperdiet ac.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et elit sed nulla aliquam porta. Cras
+                iaculis ac sapien vitae pharetra. Maecenas auctor ultrices erat, id malesuada mauris pellentesque eu.
+                Fusce fringilla, nisi et blandit congue, nisi erat varius risus, non euismod enim dui quis risus.
+                Vivamus vel neque in ante porta dictum. Phasellus dignissim, massa et vehicula varius, lectus tellus
+                aliquet eros, sit amet placerat tortor neque et tortor. Fusce purus tellus, imperdiet vitae tincidunt
+                venenatis, sollicitudin et lectus.
+
+                Cras condimentum nulla ultricies ex ullamcorper, vitae consectetur purus fermentum. Nullam posuere
+                sapien et velit efficitur, et auctor mauris ullamcorper. In faucibus fermentum interdum. Duis ultrices
+                placerat sapien, at fermentum neque volutpat porttitor. Mauris metus erat, commodo id mi sit amet,
+                viverra hendrerit neque. Sed eleifend, justo vitae mattis sagittis, lectus dolor rhoncus tellus, sed
+                consequat lorem ex et leo. Nulla facilisi. Maecenas tristique metus tortor, id scelerisque libero
+                luctus eget. Morbi maximus turpis id sapien consectetur, vel convallis nisl bibendum. Aenean in
+                pulvinar dolor. Proin ut odio risus. Pellentesque tristique metus nec quam suscipit, vel volutpat magna
+                ornare. Mauris blandit augue lacus, at consectetur diam imperdiet ac.</p>
+        </article>
+
+        </section>
+
+    <!-- Footer -->
+    <!-- moved here beacuse it's position needs to be relative to parent box (main) --> 
+    <footer>
+        <div id="FooterText">
+                - This is the footer. Here can be placed copyright text and other funky stuff we want to share with the world. -
+        </div>
+    </footer>
+
+    </main>
+
+
+
+</body>
+
+</html>

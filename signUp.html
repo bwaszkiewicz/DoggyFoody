@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Doggy Foody</title>
+    <link rel="stylesheet" type="text/css" href="signUpStyle.css">
+    <link rel="shortcut icon" href="./img/doggy_icon.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">  
+    <script type="text/javascript" src=""></script>
+</head>
+
+<body>
+
+    <!-- Top bar section -->
+    <header>
+        <section class="TopBarButton" id="StoriesSection">
+            <a href="Stories.html"> Doggy Stories </a>
+        </section>
+
+        <section class="TopBarButton" id="ManufacturerSection">
+            <a href="Manufacturers.html"> Manufacturers </a>
+        </section>
+
+        <section class="TopBarButton" id="DryFoodSection">
+            <a href="DryFood.html"> Dry food </a>
+        </section>
+
+        <section class="TopBarButton" id="WetFoodSection">
+            <a href="WetFood.html"> Wet food </a>
+        </section>
+
+    </header> 
+    
+    <!-- Link bar under Top bar-->
+    <div id="LinkBar">
+        <table id="LinkBarTable">
+            <tr>
+                <td>
+                   <a href="SignIn.html"><b>Sign In </b></a>
+                </td>
+                <td class="LinkBarBreak">
+                    |
+                </td>
+                <td>
+                    <a href="SignUp.html"><b> Sign Up</b></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <a href="index.html">
+        <div id="Logo">
+        </div>  
+    </a> 
+    
+    <!-- Ad box on the right-->
+    <section id="AdvertSection">
+            <div id="Advert">
+                <a href="AdLink.html"><img src="./img/Ad1.png" alt="Advert"></a>
+            </div>
+        </section>
+        
+    <!-- Main block-->
+    <main>
+
+            <!-- Section of sign up-->
+            <section class="MainSignUpBlock">
+                    <h1>Sign up</h1>
+                    <div>
+                        <form>
+                            <p>Login</p>
+                            <input type="text" id="loginSignUp" class="inputText">
+                            <p>Password</p>
+                            <input type="password" id="pswSignUp" class="inputText">
+                            <p>Confirm Password</p>
+                            <input type="password" id="confirmPswSignUp" class="inputText">
+                            <p>E-mail</p>
+                            <input type="text" id="emailSignUp" class="inputText"> 
+                            <br/>
+                            <input type="submit" value="Sign up" id="submitSignUp">
+                        </form>
+                    </div>
+                </section>
+
+    <!-- Footer -->
+    <!-- moved here beacuse it's position needs to be relative to parent box (main) --> 
+    <footer>
+        <div id="FooterText">
+                - This is the footer. Here can be placed copyright text and other funky stuff we want to share with the world. -
+        </div>
+    </footer>
+
+    </main>
+
+
+
+</body>
+
+</html>

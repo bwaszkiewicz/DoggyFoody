@@ -1,0 +1,85 @@
+@import "./mainStyle.css";
+
+.MainSignUpBlock{
+    position: relative;
+    margin-top: 80px;
+    margin-left: 30%;
+    margin-bottom: 80px;
+    width: 40%;
+    max-height: 20%;
+    min-width: var(--min-page-width)/2;
+    border-radius: 10px;
+    background-color: var(--foreground-color1);
+    box-shadow: 5px 10px var(--shadow-color1);
+    color: var(--foreground-color1);
+
+}
+
+.MainSignUpBlock h1{
+    z-index: 4;
+    font-size: 16pt;
+    background-color: var(--background-color1);
+    color: var(--foreground-color1);
+    text-indent: 10px;
+    position: relative;
+    top: -1px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.MainSignUpBlock input{
+    color: var(--shadow-color1);
+    display: block;
+    margin-right: auto;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 3px;
+}
+
+.MainSignUpBlock .inputText{
+    width: 200px;
+}
+
+.MainSignUpBlock p{
+    font-size: 12pt;
+    color: var(--shadow-color1);
+   margin: 5px;
+}
+
+.MainSignUpBlock form{
+    margin-top: -15px;
+    padding: 10px;
+}
+
+.MainSignUpBlock div{
+    width: 100%;
+    display: inline-block;
+    overflow:auto;
+}
+
+.MainSignUpBlock #submitSignUp{
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; 
+    font-size: 14pt;
+    text-decoration: none;
+    padding: 0.5vw 2vw;   
+    color: var(--foreground-color1);
+    text-shadow: 0px 2px var(--background-color2);
+    background-color: var(--background-color1);
+    border-radius: 10px;
+    border: none;
+}
+.MainSignUpBlock #submitSignUp:hover{
+    background-color: var(--foreground-color2);
+    text-shadow: none;
+}

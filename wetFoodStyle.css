@@ -1,0 +1,174 @@
+@import "./mainStyle.css";
+
+.WindowNews{
+    z-index: 3;
+    margin-top: 50px;
+    margin-left:10%;
+    background-color: var(--foreground-color1);
+    box-shadow: 5px 10px var(--shadow-color1);
+    border-radius: 10px;
+    position: relative;
+    width: 80%;
+    max-height: 20%;
+    min-width: var(--min-page-width)/2;
+    text-decoration: none;
+}
+
+.WindowNews h1{
+    z-index: 4;
+    font-size: 16pt;
+    background-color: var(--background-color1);
+    color: var(--foreground-color1);
+    text-indent: 10px;
+    position: relative;
+    top: -1px;
+    padding: 10px;
+    margin-bottom: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.WindowNews .Date{
+    z-index: 4;
+    color: var(--foreground-color1);
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.WindowNews .Article{
+    z-index: 4;
+    color: var(--background-color2);
+    font-size: 10pt;
+    position: relative;
+    bottom: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-indent: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.WindowNews .SeparateLink{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.WindowNews .SeparateLink a{
+    color: var(--background-color2);
+    font-size: 14pt;
+    text-decoration: none;
+}
+.WindowNews .SeparateLink a:hover{
+    text-decoration: underline;
+}
+
+.WindowNews  a{
+    text-decoration: none;
+}
+
+.WindowNews #SortFilterPanel{
+    height: 50px;
+    display: flex;
+    align-content: flex-end;
+}
+
+.WindowNews #SortFilterPanel div{
+    font-size: 12pt;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-content: center;
+    align-items: center;
+}
+
+.WindowNews #SortFilterPanel p{
+    color: var(--shadow-color1);
+    font-size: 12pt;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.WindowNews #SortFilterPanel #SortSelectDiv, #SearchFieldDiv{
+    justify-content: center;
+    flex-grow: 1;
+
+}
+
+.WindowNews #SortFilterPanel #SortButtonDiv{
+    flex-grow: 8;
+    justify-content: flex-end;
+}
+
+.WindowNews #SortFilterPanel #SortButtonDiv button{
+    margin-right: 20px;
+    font-size: 12pt;
+    text-decoration: none;
+    padding: 5pt 20pt;   
+    color: var(--foreground-color1);
+    background-color: var(--background-color1);
+    border-radius: 10px;
+    border: none;
+}
+
+.WindowNews #SortFilterPanel #SortButtonDiv button:hover{
+    background-color: var(--foreground-color2);
+}
+
+.WindowNews #SortPanesSpacer{
+    color: var(--background-color1);
+    margin: 0px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.WindowNews #ProductShow{
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+#ProductShow div img{
+    width: 150px;
+    height: 150px;
+    border: 4px solid var(--background-color2);
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+#ProductShow #ProductDiv {
+    display: flex;
+    margin-top: 15px;
+}
+
+#ProductShow #ProductDiv:hover {
+    background-color: #fff8dd;
+}
+
+#ProductShow #ProductInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+#ProductShow #ProductInfo #ProductName{
+    font-size: 16pt;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#ProductShow #ProductInfo p{
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+#ProductShow hr{
+    color: var(--background-color1);
+    margin-top: 15px;
+}
