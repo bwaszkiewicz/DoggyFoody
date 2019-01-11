@@ -181,6 +181,7 @@ main{
     min-width: var(--min-page-width);
     top: 106px;
     left: 20%;
+    right: 20%;
     margin: 0px;
     padding-bottom: 100px;
 }
