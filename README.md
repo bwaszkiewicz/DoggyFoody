@@ -3,7 +3,7 @@ The frontside of project for dog lovers. It will connect all of them and spread 
 
 #Backend repository https://github.com/jbarczyk/DoggyFoody  
 
-#Backend, API: https://github.com/jbarczyk
+#Backend, API: https://github.com/jbarczyk  
 #Frontend, graphics, js: https://github.com/karo1404  
 #Frontend, js: https://github.com/bwaszkiewicz  
 #Graphics: https://github.com/olamusial  
