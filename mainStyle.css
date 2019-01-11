@@ -10,8 +10,12 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-    /*mobile specyfic*/
+    /*mobile specific*/
 @media only screen and (min-resolution: 117dpi) and (max-resolution: 119dpi), only screen and (min-resolution: 131dpi) and (max-resolution: 133dpi), only screen and (min-resolution: 145dpi) and (max-resolution: 154dpi), only screen and (min-resolution: 162dpi) and (max-resolution: 164dpi), only screen and (min-resolution: 169dpi) {
+    body a{
+        margin: 0px;
+    }
+    
     main{
         z-index: 1;
         background-color: var(--background-color2);
@@ -70,7 +74,7 @@ body{
     }
   }
 
-    /*desktop specyfic*/
+    /*desktop specific*/
   @media only screen and (min-resolution: 165dpi) and (max-resolution: 168dpi), only screen and (min-resolution: 155dpi) and (max-resolution: 160dpi), only screen and (min-resolution: 134dpi) and (max-resolution: 144dpi), only screen and (min-resolution: 120dpi) and (max-resolution: 130dpi), only screen and (max-resolution: 116dpi) {
     main{
         z-index: 1;
