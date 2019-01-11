@@ -5,7 +5,7 @@ body{
     --shadow-color1:     #29432c;
     --foreground-color1: #faf1cf;
     --foreground-color2: #97c89e;
-    --min-page-width: 800px;
+
 
     font-family: 'Montserrat', sans-serif;
 }
@@ -60,6 +60,10 @@ body{
 
     /*desktop specyfic*/
   @media only screen and (min-resolution: 165dpi) and (max-resolution: 168dpi), only screen and (min-resolution: 155dpi) and (max-resolution: 160dpi), only screen and (min-resolution: 134dpi) and (max-resolution: 144dpi), only screen and (min-resolution: 120dpi) and (max-resolution: 130dpi), only screen and (max-resolution: 116dpi) {
+    body{
+        --min-page-width: 800px;
+    }
+    
     main{
         z-index: 1;
         background-color: var(--background-color2);
