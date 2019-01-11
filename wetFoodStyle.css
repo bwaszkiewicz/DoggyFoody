@@ -2,7 +2,7 @@
 
 .WindowNews{
     z-index: 3;
-    margin-top: 50px;
+    margin-top: 0px;
     margin-left:10%;
     background-color: var(--foreground-color1);
     box-shadow: 5px 10px var(--shadow-color1);
@@ -24,6 +24,7 @@
     top: -1px;
     padding: 10px;
     margin-bottom: 0px;
+    margin-top: 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     -webkit-touch-callout: none;

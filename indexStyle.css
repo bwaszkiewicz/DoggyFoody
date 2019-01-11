@@ -4,7 +4,8 @@
 
 .WindowNews{
     z-index: 3;
-    margin-top: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     margin-left:10%;
     background-color: var(--foreground-color1);
     box-shadow: 5px 10px var(--shadow-color1);

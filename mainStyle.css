@@ -10,6 +10,128 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+   /*desktop specific*/
+   @media only screen and (min-resolution: 165dpi) and (max-resolution: 168dpi), only screen and (min-resolution: 155dpi) and (max-resolution: 160dpi), only screen and (min-resolution: 134dpi) and (max-resolution: 144dpi), only screen and (min-resolution: 120dpi) and (max-resolution: 130dpi), only screen and (max-resolution: 116dpi) {
+    
+    /*big desktop display*/
+    @media screen and (min-width: 1024px){
+        main{
+            z-index: 1;
+            background-color: var(--background-color2);
+            background-image: url(./img/doggy_background.jpg);
+            box-shadow: 0px 2px var(--shadow-color1);
+            position: absolute;
+            width: 60%;
+            min-width: var(--min-page-width);
+            top: 106px;
+            left: 20%;
+            right: 20%;
+            margin: 0px;
+            padding-bottom: 100px;
+        }
+        
+        #Logo{
+            position: absolute;
+            z-index: 3;
+            left: 20%;
+            top: 0px;
+            width: 360px;
+            height: 106px;
+            background: url(./img/TopNavLogo.png) left top no-repeat;
+            margin: 0px;
+        }
+        
+        header{
+            z-index:1;
+            min-width: var(--min-page-width);
+            background: url(./img/TopNavBackground.png) left top no-repeat;
+            background-color: var(--background-color2);
+            width: 60%;
+            height: 80px;
+            margin: 0px;
+            top: 0px;
+            left: 20%;
+            position: absolute;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    
+        #LinkBar{
+            background-color: var(--foreground-color1);
+            z-index: 2;
+            min-width: var(--min-page-width);
+            position: absolute;
+            top: 80px;
+            left: 20%;
+            height: 26px;
+            width: 60%;
+            margin: 0px;
+            padding: 0px;
+        }
+    }
+
+    /*small desktop display*/
+    @media screen and (max-width: 1023px){
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden; 
+        }
+        
+        main{
+            z-index: 1;
+            background-color: var(--background-color2);
+            background-image: url(./img/doggy_background.jpg);
+            box-shadow: 0px 2px var(--shadow-color1);
+            position: absolute;
+            width: 100%;
+            min-width: var(--min-page-width);
+            top: 106px;
+            margin: 0px;
+            padding-bottom: 100px;
+        }
+    
+        #Logo{
+            position: absolute;
+            z-index: 3;
+            top: 0px;
+            width: 360px;
+            height: 106px;
+            background: url(./img/TopNavLogo.png) left top no-repeat;
+            margin: 0px;
+        }
+        
+        header{
+            z-index:1;
+            min-width: var(--min-page-width);
+            background: url(./img/TopNavBackground.png) left top no-repeat;
+            background-color: var(--background-color2);
+            width: 100%;
+            height: 80px;
+            margin: 0px;
+            top: 0px;
+            position: absolute;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    
+        #LinkBar{
+            background-color: var(--foreground-color1);
+            z-index: 2;
+            min-width: var(--min-page-width);
+            position: absolute;
+            top: 80px;
+            height: 26px;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+    }
+    
+  }
+
     /*mobile specific*/
 @media only screen and (min-resolution: 117dpi) and (max-resolution: 119dpi), only screen and (min-resolution: 131dpi) and (max-resolution: 133dpi), only screen and (min-resolution: 145dpi) and (max-resolution: 154dpi), only screen and (min-resolution: 162dpi) and (max-resolution: 164dpi), only screen and (min-resolution: 169dpi) {
     html,body{
@@ -67,80 +189,6 @@ body{
         width: 100%;
         margin: 0px;
         padding: 0px;
-    }
-
-    #AdvertSection{
-        z-index: 5;
-        Position:fixed;
-        right: 0px;
-        width: auto;
-        top: 106px;
-        height: 100vh;
-    }
-  }
-
-    /*desktop specific*/
-  @media only screen and (min-resolution: 165dpi) and (max-resolution: 168dpi), only screen and (min-resolution: 155dpi) and (max-resolution: 160dpi), only screen and (min-resolution: 134dpi) and (max-resolution: 144dpi), only screen and (min-resolution: 120dpi) and (max-resolution: 130dpi), only screen and (max-resolution: 116dpi) {
-    main{
-        z-index: 1;
-        background-color: var(--background-color2);
-        background-image: url(./img/doggy_background.jpg);
-        box-shadow: 0px 2px var(--shadow-color1);
-        position: absolute;
-        width: 60%;
-        min-width: var(--min-page-width);
-        top: 106px;
-        left: 20%;
-        right: 20%;
-        margin: 0px;
-        padding-bottom: 100px;
-    }
-    
-    #Logo{
-        position: absolute;
-        z-index: 3;
-        left: 20%;
-        top: 0px;
-        width: 360px;
-        height: 106px;
-        background: url(./img/TopNavLogo.png) left top no-repeat;
-        margin: 0px;
-    }
-    
-    header{
-        z-index:1;
-        min-width: var(--min-page-width);
-        background: url(./img/TopNavBackground.png) left top no-repeat;
-        background-color: var(--background-color2);
-        width: 60%;
-        height: 80px;
-        margin: 0px;
-        top: 0px;
-        left: 20%;
-        position: absolute;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    #LinkBar{
-        background-color: var(--foreground-color1);
-        z-index: 2;
-        min-width: var(--min-page-width);
-        position: absolute;
-        top: 80px;
-        left: 20%;
-        height: 26px;
-        width: 60%;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    #AdvertSection{
-        Position:absolute;
-        left: 85%;
-        width: auto;
-        top: 106px;
-        height: 100vh;
     }
   }
 
@@ -250,12 +298,31 @@ body{
 /* MAIN */
 
 #Advert{
-    position: sticky;
-    top: 10px;
-    max-height: 50%;
-    max-width: 80%;
+    height: auto;
+    width: 600px;
     margin: 0px;
     padding: 0px;
+}
+#Advert a{
+    margin: 0px;
+    padding: 0px;
+}
+#Advert img{
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+    border: 2px solid var(--shadow-color1);
+}
+
+#AdvertSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
 }
 
 /* FOOTER */
