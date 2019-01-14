@@ -28,7 +28,6 @@ body{
             left: 20%;
             right: 20%;
             margin: 0px;
-            padding-bottom: 100px;
         }
         
         #Logo{
@@ -336,11 +335,10 @@ footer{
     background-color: var(--foreground-color1);
     width: 100%;
     min-height: 100px;
-
     left: 0px;
-    bottom: -51px;
+    bottom: -100px;
     padding: 0px;
-    margin: 0px;
+    margin-top: 0px;
     text-align: center;
     align-items: center;
     justify-content: center;
