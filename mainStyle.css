@@ -23,6 +23,7 @@ body{
             position: absolute;
             width: 60%;
             min-width: var(--min-page-width);
+            min-height: calc(100vh - 206px);
             top: 106px;
             left: 20%;
             right: 20%;
@@ -88,6 +89,7 @@ body{
             position: absolute;
             width: 100%;
             min-width: var(--min-page-width);
+            min-height: calc(100vh - 206px);
             top: 106px;
             margin: 0px;
             padding-bottom: 100px;
@@ -140,6 +142,7 @@ body{
         margin: 0px;
         padding: 0px;
         overflow-x: hidden; 
+        background-color: var(--foreground-color1);
     }
     
     main{
@@ -150,6 +153,7 @@ body{
         position: absolute;
         width: 100%;
         min-width: var(--min-page-width);
+        min-height: calc(100vh - 206px);
         top: 106px;
         margin: 0px;
         padding-bottom: 100px;
@@ -331,16 +335,20 @@ footer{
     position: absolute;
     background-color: var(--foreground-color1);
     width: 100%;
-    height: auto;
+    min-height: 100px;
 
     left: 0px;
     bottom: -51px;
     padding: 0px;
     margin: 0px;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 footer #FooterText{
+    margin-left: auto;
+    margin-right: auto;
     color: var(--background-color2);
     font-size: 10pt;
     margin-top: 10px;
