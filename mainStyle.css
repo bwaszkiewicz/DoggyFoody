@@ -331,7 +331,8 @@ footer{
     position: absolute;
     background-color: var(--foreground-color1);
     width: 100%;
-    height: 50px;
+    height: auto;
+
     left: 0px;
     bottom: -51px;
     padding: 0px;
@@ -343,4 +344,5 @@ footer #FooterText{
     color: var(--background-color2);
     font-size: 10pt;
     margin-top: 10px;
+    margin-bottom: 1vw;
 }
