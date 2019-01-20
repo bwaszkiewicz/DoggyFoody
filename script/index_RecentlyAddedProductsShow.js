@@ -1,38 +1,22 @@
 /* Setter of product info on RecentlyAddedProducts div at index.html */
 
-/* temp arrays */
-let links = ["./products/man1/product1.html","./products/man1/product2.html","./products/man1/product3.html"];
-let images = ["./products/Product1.jpg","./products/Product2.jpg","./products/Product3.jpg"];
-var names = ["Science Diet - Chicken & Barley Entree","Pedigree Adult Chicken","Purina Beneful grain free"];
-
 function callApi(){
-	fetch("https://doggyfoodyapi.azurewebsites.net/api/manufacturers?id=1").then(function(response) {
+	fetch("https://doggyfoodyapi.azurewebsites.net/api/products").then(function(response) {
     return response.json();}).then(function(myJson){
+
 		var data = myJson;
+
+    document.getElementById("RecentlyAddedProductsProduct1Name").innerHTML = data[Object.keys(data).length - 1].Name;
+    document.getElementById("RecentlyAddedProductsProduct2Name").innerHTML = data[Object.keys(data).length - 2].Name;
+    document.getElementById("RecentlyAddedProductsProduct3Name").innerHTML = data[Object.keys(data).length - 3].Name;
     
-	names[0] = data.Name;
-	
-	
-	setLinks();
-	setImages();
-	setNames();
+    document.getElementById("RecentlyAddedProductsProduct1Link").href = "'./productPage.html?id=" + data[Object.keys(data).length - 1].Id + "'";
+    document.getElementById("RecentlyAddedProductsProduct2Link").href = "'./productPage.html?id=" + data[Object.keys(data).length - 2].Id + "'";
+    document.getElementById("RecentlyAddedProductsProduct3Link").href = "'./productPage.html?id=" + data[Object.keys(data).length - 3].Id + "'";
+
+    document.getElementById("RecentlyAddedProductsProduct1Image").setAttribute("src","'./products/" + data[Object.keys(data).length - 1].Id + ".jpg'");
+    document.getElementById("RecentlyAddedProductsProduct2Image").setAttribute("src","'./products/" + data[Object.keys(data).length - 2].Id + ".jpg'");
+    document.getElementById("RecentlyAddedProductsProduct3Image").setAttribute("src","'./products/" + data[Object.keys(data).length - 3].Id + ".jpg'");
+
 });
-}
-
-function setLinks(){
-    document.getElementById("RecentlyAddedProductsProduct1Link").href = links[0];
-    document.getElementById("RecentlyAddedProductsProduct2Link").href = links[1];
-    document.getElementById("RecentlyAddedProductsProduct3Link").href = links[2];
-}
-
-function setImages(){
-    document.getElementById("RecentlyAddedProductsProduct1Image").setAttribute("src",images[0]);
-    document.getElementById("RecentlyAddedProductsProduct2Image").setAttribute("src",images[1]);
-    document.getElementById("RecentlyAddedProductsProduct3Image").setAttribute("src",images[2]);
-}
-
-function setNames(){
-    document.getElementById("RecentlyAddedProductsProduct1Name").innerHTML = names[0];
-    document.getElementById("RecentlyAddedProductsProduct2Name").innerHTML = names[1];
-    document.getElementById("RecentlyAddedProductsProduct3Name").innerHTML = names[2];
 }

@@ -1,77 +1,80 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Doggy Foody</title>
-    <link rel="stylesheet" type="text/css" href="productPageStyle.css">
-    <link rel="shortcut icon" href="./img/doggy_icon.ico" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700,800" rel="stylesheet">
-    <script type="text/javascript" src=""></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Doggy Foody</title>
+        <link rel="stylesheet" type="text/css" href="productPageStyle.css">
+        <link rel="shortcut icon" href="./img/doggy_icon.ico" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:600,700,800"
+            rel="stylesheet">
+        <script type="text/javascript" src="./script/productPage_loadProduct.js"></script>
+    </head>
 
-<body>
+    <body>
 
-    <!-- Top bar section -->
-    <header>
-        <section class="TopBarButton" id="StoriesSection">
-            <a href="Stories.html"> Doggy Stories </a>
-        </section>
+        <!-- Top bar section -->
+        <header>
+            <section class="TopBarButton" id="StoriesSection">
+                <a href="Stories.html"> Doggy Stories </a>
+            </section>
 
-        <section class="TopBarButton" id="ManufacturerSection">
-            <a href="Manufacturers.html"> Manufacturers </a>
-        </section>
+            <section class="TopBarButton" id="ManufacturerSection">
+                <a href="Manufacturers.html"> Manufacturers </a>
+            </section>
 
-        <section class="TopBarButton" id="DryFoodSection">
-            <a href="DryFood.html"> Dry food </a>
-        </section>
+            <section class="TopBarButton" id="DryFoodSection">
+                <a href="DryFood.html"> Dry food </a>
+            </section>
 
-        <section class="TopBarButton" id="WetFoodSection">
-            <a href="WetFood.html"> Wet food </a>
-        </section>
+            <section class="TopBarButton" id="WetFoodSection">
+                <a href="WetFood.html"> Wet food </a>
+            </section>
 
-    </header>
+        </header>
 
-    <!-- Link bar under Top bar-->
-    <div id="LinkBar">
-        <table id="LinkBarTable">
-            <tr>
-                <td>
-                    <a href="SignIn.html"><b>Sign In </b></a>
-                </td>
-                <td class="LinkBarBreak">
-                    |
-                </td>
-                <td>
-                    <a href="SignUp.html"><b> Sign Up</b></a>
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <a href="index.html">
-        <div id="Logo">
+        <!-- Link bar under Top bar-->
+        <div id="LinkBar">
+            <table id="LinkBarTable">
+                <tr>
+                    <td>
+                        <a href="SignIn.html"><b>Sign In </b></a>
+                    </td>
+                    <td class="LinkBarBreak">
+                        |
+                    </td>
+                    <td>
+                        <a href="SignUp.html"><b> Sign Up</b></a>
+                    </td>
+                </tr>
+            </table>
         </div>
-    </a>
 
-    <!-- Main block-->
-    <main>
-
-        <!-- Ad box -->
-        <section id="AdvertSection">
-            <div id="Advert">
-                <a href="AdLink.html"><img src="./img/r3klama1-horisontal.gif" alt="Ad"></a>
+        <a href="index.html">
+            <div id="Logo">
             </div>
-        </section>
+        </a>
 
-        <!-- List Section-->
-        <section class="MainBlockNews">
+        <!-- Main block-->
+        <main>
 
-            <div class="WindowNews">
-                <div id="ProductSection">
+            <!-- Ad box -->
+            <section id="AdvertSection">
+                <div id="Advert">
+                    <a href="AdLink.html"><img
+                            src="./img/r3klama1-horisontal.gif" alt="Ad"></a>
+                </div>
+            </section>
 
-                    <!--complete product section-->
+            <!-- List Section-->
+            <section class="MainBlockNews">
+
+                <div class="WindowNews">
+                    <div id="ProductSection">
+                        
                     <div id="ProductDiv">
+                        <!--complete product section
                         <img id="ProductImage" src="./products/Product2.jpg">
                         <div id="ProductInfo">
                             <p id="ProductName">Pedigree Adult Chicken</p>
@@ -79,7 +82,7 @@
                             <p id="ProductRating"><b>Rating: </b>
                                 <span id="RatingContainer">
                                     <span id="rating5" class="Rating" onclick="">☆</span>
-                                    <!-- TODO: add action of voting to onclicks -->
+                                    TODO: add action of voting to onclicks 
                                     <span id="rating4" class="Rating" onclick="">☆</span>
                                     <span id="rating3" class="Rating" onclick="">☆</span>
                                     <span id="rating2" class="Rating" onclick="">★</span>
@@ -88,120 +91,128 @@
                             </p>
                             <p id="ProductManufacturer"><b>Manufacturer:</b> Pedigree</p>
                             <p id="ProductIngredients"><b>Ingredients:</b> dog food 99%, air 1%</p>
-                            <p id="ProductDescription"><b>Description:</b> Tastes like dog food. Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit. Nullam et elit sed nulla aliquam porta. Cras
-                                iaculis ac sapien vitae pharetra. Maecenas auctor ultrices erat, id malesuada mauris
-                                pellentesque eu.
-                                Fusce fringilla, nisi et blandit congue, nisi erat varius risus, non euismod enim dui
-                                quis risus.
-                                Vivamus vel neque in ante porta dictum. Phasellus dignissim, massa et vehicula varius,
-                                lectus tellus
-                                aliquet eros, sit amet placerat tortor neque et tortor. Fusce purus tellus, imperdiet
-                                vitae tincidunt
-                                venenatis, sollicitudin et lectus.</p>
-                        </div>
+                            <p id="ProductDescription"><b>Description:</b> Tastes like dog food.</p>
+                        </div>-->
                     </div>
 
                     <script>
-
+                    generateProduct();
                     </script>
 
-                </div id="CommentsSection">
-                <h1> User comments</h1>
+                    <div id="CommentsSection">
+                    <h1> User comments</h1>
 
-                <!-- one comment embodies in Comment div -->
-                <div id="Comment">
-                    <div id="UserInfo">
-                        <p id="Username"><b>MistGun</b></p>
-                        <p id="UserGroup">User</p>
+                    <!-- one comment embodies in Comment div -->
+                    <div id="Comment">
+                        <div id="UserInfo">
+                            <p id="Username"><b>MistGun</b></p>
+                            <p id="UserGroup">User</p>
+                        </div>
+                        <hr>
+                        <div id="UserComment">
+                            <article class="Article">
+                                Indeed, it tastes like dog food! Lorem ipsum
+                                dolor sit
+                                amet, consectetur adipiscing elit. Nullam et
+                                elit sed nulla aliquam porta. Cras
+                                iaculis ac sapien vitae pharetra. Maecenas
+                                auctor ultrices erat, id malesuada mauris
+                                pellentesque eu.
+                                Fusce fringilla, nisi et blandit congue, nisi
+                                erat varius risus, non euismod enim dui
+                                quis risus.
+                                Vivamus vel neque in ante porta dictum.
+                                Phasellus dignissim, massa et vehicula varius,
+                                lectus tellus
+                                aliquet eros, sit amet placerat tortor neque et
+                                tortor. Fusce purus tellus, imperdiet
+                                vitae tincidunt
+                                venenatis, sollicitudin et lectus.
+                            </article>
+                        </div>
                     </div>
-                    <hr>
-                    <div id="UserComment">
-                        <article class="Article">
-                            Indeed, it tastes like dog food! Lorem ipsum dolor sit
-                            amet, consectetur adipiscing elit. Nullam et elit sed nulla aliquam porta. Cras
-                            iaculis ac sapien vitae pharetra. Maecenas auctor ultrices erat, id malesuada mauris
-                            pellentesque eu.
-                            Fusce fringilla, nisi et blandit congue, nisi erat varius risus, non euismod enim dui
-                            quis risus.
-                            Vivamus vel neque in ante porta dictum. Phasellus dignissim, massa et vehicula varius,
-                            lectus tellus
-                            aliquet eros, sit amet placerat tortor neque et tortor. Fusce purus tellus, imperdiet
-                            vitae tincidunt
-                            venenatis, sollicitudin et lectus.
-                        </article>
+                    <div id="Comment">
+                        <div id="UserInfo">
+                            <p id="Username"><b>karo1404</b></p>
+                            <p id="UserGroup">Admin</p>
+                        </div>
+                        <hr>
+                        <div id="UserComment">
+                            <article class="Article">
+                                What am I even doing here...
+                            </article>
+                        </div>
                     </div>
+                    <div id="Comment">
+                        <div id="UserInfo">
+                            <p id="Username"><b>kokon666-veeeeery-long-nickname-for-testing-purposes</b></p>
+                            <p id="UserGroup">User</p>
+                        </div>
+                        <hr>
+                        <div id="UserComment">
+                            <article class="Article">
+                                btw. JP100% Lorem ipsum dolor sit
+                                amet, consectetur adipiscing elit. Nullam et
+                                elit sed nulla aliquam porta. Cras
+                                iaculis ac sapien vitae pharetra. Maecenas
+                                auctor ultrices erat, id malesuada mauris
+                                pellentesque eu.
+                                Fusce fringilla, nisi et blandit congue, nisi
+                                erat varius risus, non euismod enim dui
+                                quis risus.
+                                Vivamus vel neque in ante porta dictum.
+                                Phasellus dignissim, massa et vehicula varius,
+                                lectus tellus
+                                aliquet eros, sit amet placerat tortor neque et
+                                tortor. Fusce purus tellus, imperdiet
+                                vitae tincidunt
+                                venenatis, sollicitudin et lectus.Fusce
+                                fringilla, nisi et blandit congue, nisi erat
+                                varius
+                                risus, non euismod enim dui
+                                quis risus.
+                                Vivamus vel neque in ante porta dictum.
+                                Phasellus dignissim, massa et vehicula varius,
+                                lectus tellus
+                                aliquet eros, sit amet placerat tortor neque et
+                                tortor. Fusce purus tellus, imperdiet
+                                vitae tincidunt
+                                venenatis, sollicitudin et lectus.
+                            </article>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="AddCommentSection">
+                            <h1 id="AddYourCommentHeader">Add your comment</h1>
+                            <form>
+                                <textarea rows="5" maxlength="256"></textarea>
+                                <input type="submit" value="Post"
+                                    id="submitComment">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="SeparateLink">
+                        <a href="signIn.html">» You have to be logged in to add
+                            comment! «</a> <!-- div to be set if user is not logged in -->
+                    </div>
+                    <br />
                 </div>
-                <div id="Comment">
-                    <div id="UserInfo">
-                        <p id="Username"><b>karo1404</b></p>
-                        <p id="UserGroup">Admin</p>
-                    </div>
-                    <hr>
-                    <div id="UserComment">
-                        <article class="Article">
-                            What am I even doing here...
-                        </article>
-                    </div>
-                </div>
-                <div id="Comment">
-                    <div id="UserInfo">
-                        <p id="Username"><b>kokon666-veeeeery-long-nickname-for-testing-purposes</b></p>
-                        <p id="UserGroup">User</p>
-                    </div>
-                    <hr>
-                    <div id="UserComment">
-                        <article class="Article">
-                            btw. JP100% Lorem ipsum dolor sit
-                            amet, consectetur adipiscing elit. Nullam et elit sed nulla aliquam porta. Cras
-                            iaculis ac sapien vitae pharetra. Maecenas auctor ultrices erat, id malesuada mauris
-                            pellentesque eu.
-                            Fusce fringilla, nisi et blandit congue, nisi erat varius risus, non euismod enim dui
-                            quis risus.
-                            Vivamus vel neque in ante porta dictum. Phasellus dignissim, massa et vehicula varius,
-                            lectus tellus
-                            aliquet eros, sit amet placerat tortor neque et tortor. Fusce purus tellus, imperdiet
-                            vitae tincidunt
-                            venenatis, sollicitudin et lectus.Fusce fringilla, nisi et blandit congue, nisi erat varius
-                            risus, non euismod enim dui
-                            quis risus.
-                            Vivamus vel neque in ante porta dictum. Phasellus dignissim, massa et vehicula varius,
-                            lectus tellus
-                            aliquet eros, sit amet placerat tortor neque et tortor. Fusce purus tellus, imperdiet
-                            vitae tincidunt
-                            venenatis, sollicitudin et lectus.
-                        </article>
-                    </div>
-                </div>
-                <div>
-                    <div id="AddCommentSection">
-                        <h1 id="AddYourCommentHeader">Add your comment</h1>
-                        <form>
-                            <textarea rows="5" maxlength="256"></textarea>
-                            <input type="submit" value="Post" id="submitComment">
-                        </form>
-                    </div>
-                </div>
-                <div class="SeparateLink">
-                    <a href="signIn.html">» You have to be logged in to add comment! «</a>         <!-- div to be set if user is not logged in -->
-                </div>
-                <br />
-            </div>
 
-        </section>
-        
-    <!-- Footer -->
-    <br/><br/>
-        <footer>
-            <div id="FooterText">
-                © Doggy Foody Team<br><br>doggyfoody@mail.com<br>tel. +32 222222-22223
-        </div>
-        </footer>
+            </section>
 
-    </main>
+            <!-- Footer -->
+            <br/><br/>
+                    <footer>
+                        <div id="FooterText">
+                            © Doggy Foody Team<br><br>doggyfoody@mail.com<br>tel.
+                            +32 222222-22223
+                        </div>
+                    </footer>
+
+                </main>
 
 
 
-</body>
+            </body>
 
-</html>
+        </html>

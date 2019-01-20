@@ -1,163 +1,150 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Doggy Foody</title>
-    <link rel="stylesheet" type="text/css" href="wetFoodStyle.css">
-    <link rel="shortcut icon" href="./img/doggy_icon.ico"/>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">  
-    <script type="text/javascript" src=""></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Doggy Foody</title>
+        <link rel="stylesheet" type="text/css" href="wetFoodStyle.css">
+        <link rel="shortcut icon" href="./img/doggy_icon.ico" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:600"
+            rel="stylesheet">
+        <script type="text/javascript" src="./script/wetFood_loadProducts.js"></script>
+    </head>
 
-<body>
+    <body>
 
-    <!-- Top bar section -->
-    <header>
-        <section class="TopBarButton" id="StoriesSection">
-            <a href="Stories.html"> Doggy Stories </a>
-        </section>
+        <!-- Top bar section -->
+        <header>
+            <section class="TopBarButton" id="StoriesSection">
+                <a href="Stories.html"> Doggy Stories </a>
+            </section>
 
-        <section class="TopBarButton" id="ManufacturerSection">
-            <a href="Manufacturers.html"> Manufacturers </a>
-        </section>
+            <section class="TopBarButton" id="ManufacturerSection">
+                <a href="Manufacturers.html"> Manufacturers </a>
+            </section>
 
-        <section class="TopBarButton" id="DryFoodSection">
-            <a href="DryFood.html"> Dry food </a>
-        </section>
+            <section class="TopBarButton" id="DryFoodSection">
+                <a href="DryFood.html"> Dry food </a>
+            </section>
 
-        <section class="TopBarButton" id="WetFoodSection">
-            <a href="WetFood.html"> Wet food </a>
-        </section>
+            <section class="TopBarButton" id="WetFoodSection">
+                <a href="WetFood.html"> Wet food </a>
+            </section>
 
-    </header> 
-    
-    <!-- Link bar under Top bar-->
-    <div id="LinkBar">
-        <table id="LinkBarTable">
-            <tr>
-                <td>
-                   <a href="SignIn.html"><b>Sign In </b></a>
-                </td>
-                <td class="LinkBarBreak">
-                    |
-                </td>
-                <td>
-                    <a href="SignUp.html"><b> Sign Up</b></a>
-                </td>
-            </tr>
-        </table>
-    </div>
+        </header>
 
-    <a href="index.html">
-        <div id="Logo">
-        </div>  
-    </a> 
-        
-    <!-- Main block-->
-    <main>
+        <!-- Link bar under Top bar-->
+        <div id="LinkBar">
+            <table id="LinkBarTable">
+                <tr>
+                    <td>
+                        <a href="SignIn.html"><b>Sign In </b></a>
+                    </td>
+                    <td class="LinkBarBreak">
+                        |
+                    </td>
+                    <td>
+                        <a href="SignUp.html"><b> Sign Up</b></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <a href="index.html">
+            <div id="Logo">
+            </div>
+        </a>
+
+        <!-- Main block-->
+        <main>
 
             <!-- Ad box -->
-    <section id="AdvertSection">
-            <div id="Advert">
-                <a href="AdLink.html"><img src="./img/r3klama1-horisontal.gif" alt="Ad"></a>
-            </div>
-        </section>
+            <section id="AdvertSection">
+                <div id="Advert">
+                    <a href="AdLink.html"><img
+                            src="./img/r3klama1-horisontal.gif" alt="Ad"></a>
+                </div>
+            </section>
 
-        <!-- List Section-->
-        <section class="MainBlockNews">
+            <!-- List Section-->
+            <section class="MainBlockNews">
 
-            <div class="WindowNews">
+                <div class="WindowNews">
                     <h1>Wet Food</h1>
-                <form>
-                    <div id="SortFilterPanel">
-                        <div id="SortSelectDiv">
-                            <p>Sort by:</p>
-                            <select id="SortSelect">
+                    <form>
+                        <div id="SortFilterPanel">
+                            <div id="SortSelectDiv">
+                                <p>Sort by:</p>
+                                <select id="SortSelect">
                                     <option value="Rating">Rating</option>
                                     <option value="Name">Name</option>
                                     <option value="Price">Price</option>
                                     <option value="Popularity">Popularity</option>
-                                    <option value="Manufacturer name">Manufacturer name</option>
-                            </select>
-                        </div>
-                        <div id="SearchFieldDiv">
-                                <p>Search:</p>
-                                <input type="text" value="" id="SearchField"/>
-                        </div>
-                        <div id="SortButtonDiv">
-                                <button type="submit" id="SortSelect">Apply</button>
-                        </div> 
-                    </div>
-                </form>
-                    <hr id="SortPanelSpacer">
-                    <div id="ProductShow">
-                        
-                        <!--whole a with hr on the end is complete product section-->
-                        <a id="ProductLink" href="./productPage.html">
-                            <div id="ProductDiv">   
-                                <img id="ProductImage" src="./products/Product2.jpg">
-                                    <div id="ProductInfo">
-                                        <p id="ProductName"><b>Pedigree Adult Chicken</b></p>
-                                        <p id="ProductRating">Rating: 
-                                                <span id="rating1" class="Rating">★</span>
-                                                <span id="rating2" class="Rating">★</span>
-                                                <span id="rating3" class="Rating">☆</span>
-                                                <span id="rating4" class="Rating">☆</span>
-                                                <span id="rating5" class="Rating">☆</span>
-                                        </p>
-                                        <p id="ProductManufacturer">Manufacturer: Pedigree</p>
-                                    </div>
-
+                                    <option value="Manufacturer name">Manufacturer
+                                        name</option>
+                                </select>
                             </div>
-                        </a>
-                        <hr>
+                            <div id="SearchFieldDiv">
+                                <p>Search:</p>
+                                <input type="text" value="" id="SearchField" />
+                            </div>
+                            <div id="SortButtonDiv">
+                                <button type="submit" id="SortSelect">Apply</button>
+                            </div>
+                        </div>
+                    </form>
+                    <hr id="SortPanelSpacer">
 
-                        <a id="ProductLink" href="./productPage.html">
-                                <div id="ProductDiv">   
-                                    <img id="ProductImage" src="./products/Product2.jpg">
-                                        <div id="ProductInfo">
-                                            <p id="ProductName"><b>Pedigree Adult Chicken</b></p>
-                                            <p id="ProductRating">Rating: 
-                                                    <span id="rating1" class="Rating">★</span>
-                                                    <span id="rating2" class="Rating">★</span>
-                                                    <span id="rating3" class="Rating">★</span>
-                                                    <span id="rating4" class="Rating">★</span>
-                                                    <span id="rating5" class="Rating">☆</span>
-                                            </p>
-                                            <p id="ProductManufacturer">Manufacturer: Pedigree</p>
-                                        </div>
-    
-                                </div>
-                            </a>
-                            <hr>
 
-                        <script>
-							
-                        </script>
+                    <!--this div will be generated by script-->
+                    <div id="ProductShow">
 
+                        <!--whole a with hr on the end is complete product section
+                                            <a id="ProductLink" href="./productPage.html">
+                                                <div id="ProductDiv">   
+                                                    <img id="ProductImage" src="./products/Product2.jpg">
+                                                        <div id="ProductInfo">
+                                                            <p id="ProductName"><b>Pedigree Adult Chicken</b></p>
+                                                            <p id="ProductRating">Rating: 
+                                                                    <span id="rating1" class="Rating">★</span>
+                                                                    <span id="rating2" class="Rating">★</span>
+                                                                    <span id="rating3" class="Rating">☆</span>
+                                                                    <span id="rating4" class="Rating">☆</span>
+                                                                    <span id="rating5" class="Rating">☆</span>
+                                                            </p>
+                                                            <p id="ProductManufacturer">Manufacturer: Pedigree</p>
+                                                        </div>
+                    
+                                                </div>
+                                            </a>
+                                            <hr>
+                                        -->
                     </div>
-
+                    <script>
+                        generateProducts();
+                    </script>
                     <div class="SeparateLink">
-                            <a href="Manufacturers.html">» Missing product? Add it here! «</a>
+                        <a href="Manufacturers.html">» Missing product? Add it
+                            here! «</a>
                     </div>
                     <br/>
-            </div>
+                    </div>
 
-        </section>
+                </section>
 
-    <!-- Footer -->
-    <br/><br/>
-    <footer>
-        <div id="FooterText">
-            © Doggy Foody Team<br><br>doggyfoody@mail.com<br>tel. +32 222222-22223
-    </div>
-    </footer>
+                <!-- Footer -->
+                <br/><br/>
+                        <footer>
+                            <div id="FooterText">
+                                © Doggy Foody Team<br><br>doggyfoody@mail.com<br>tel.
+                                +32 222222-22223
+                            </div>
+                        </footer>
 
-    </main>
+                    </main>
 
 
 
-</body>
+                </body>
 
-</html>
+            </html>
