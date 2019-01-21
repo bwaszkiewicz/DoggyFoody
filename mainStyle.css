@@ -300,6 +300,10 @@ body{
 
 /* MAIN */
 
+main img{
+    background-color: white;
+}
+
 #Advert{
     height: auto;
     width: 600px;

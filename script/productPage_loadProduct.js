@@ -15,31 +15,38 @@ function generatePage() {
             return response1.json();
         }).then(function (manufacturerJson) {
 
-        let html = "";
-        let productRating = 0.0;
+            let html = "";
+            let productRating = 0.0;
 
-        html += "<img id='ProductImage' src='"+ product.ImageAddress +"'>";
-        html += "<div id='ProductInfo'>";
-        html += "<p id='ProductName'>" + product.Name + "</p>";
-        html += "<hr>";
-        html += "<p id='ProductRating'><b>Rating: </b>";
-        html += "<span id='RatingContainer'>";
+            html += "<img id='ProductImage' src='" + product.ImageAddress + "'>";
+            html += "<div id='ProductInfo'>";
+            html += "<p id='ProductName'>" + product.Name + "</p>";
+            html += "<hr>";
+            html += "<p id='ProductRating'><b>Rating: </b>";
+            html += "<span id='RatingContainer'>";
 
-        for (var l = 0; l < product.Rates.length; l++) {
-            productRating += product.Rates[l].Score;
+            for (var l = 0; l < product.Rates.length; l++) {
+                productRating += product.Rates[l].Score;
+            }
+            productRating = productRating / product.Rates.length;
+
+            if (JSON.stringify(product.Rates) == "[]") {
+                for (var f = 0; f < 5; f++) {
+                    html += "<span class='Rating' onclick=''>☆</span>"
+                }
+            }
+            else
+            {
+            //fill rating stars
+            for (var k = 0; k < (5 - Math.round(productRating)); k++) {
+                html += "<span class='Rating' onclick=''>☆</span>"
+            }
+            for (var j = 0; j < Math.round(productRating); j++) {
+                html += "<span class='Rating' onclick=''>★</span>"
+            }
         }
-        productRating = productRating / product.Rates.length;
-
-        //fill rating stars
-        for (var k = 0; k < (5 - Math.round(productRating)); k++) {
-            html += "<span class='Rating' onclick=''>☆</span>"
-        }
-        for (var j = 0; j < Math.round(productRating); j++) {
-            html += "<span class='Rating' onclick=''>★</span>"
-        }
-
-        html += "</span>";
-        html += "</p>";
+            html += "</span>";
+            html += "</p>";
 
 
 
@@ -47,31 +54,39 @@ function generatePage() {
 
 
 
-        html += "<p id='ProductIngredients'><b>Ingredients: </b>"+ product.Ingredients +"</p>";
-        html += "<p id='ProductDescription'><b>Description: </b>"+ product.Description +"</p>";
-        html += "</div>";
-        html += "</div>";
+            html += "<p id='ProductIngredients'><b>Ingredients: </b>" + product.Ingredients + "</p>";
+            html += "<p id='ProductDescription'><b>Description: </b>" + product.Description + "</p>";
+            html += "</div>";
+            html += "</div>";
 
-        document.getElementById("ProductDiv").innerHTML = html;
+            document.getElementById("ProductDiv").innerHTML = html;
 
-        //COMMENT SECTION
+            //COMMENT SECTION
 
-        html = "";
-        for (var m = 0; m < product.Comments.length; m++) 
-        {
-        html += "<div id='Comment'>"
-        html += "<div id='UserInfo'>"
-        html += "<p id='Username'><b>"+product.Comments[m].Author+"</b></p>"
-        html += "<p id='UserGroup'>"+product.Comments[m].Published.substring(0,10)+"</p>"
-        html += "</div>"
-        html += "<hr>"
-        html += "<div id='UserComment'>"
-        html += "<article class='Article'>"+product.Comments[m].Text+"</article>"
-        html += "</div>"
-        html += "</div>"
-        }
+            html = "";
 
-        document.getElementById("CommentsDiv").innerHTML = html;
-    });
+            if (product.Comments == null || JSON.stringify(product.Comments) == "[]") {
+                html += "<div id='Comment'>"
+                html += "<div id='UserComment'>"
+                html += "<article class='Article'>" + "There are no comments for this product yet. Be first to add yours below!" + "</article>"
+                html += "</div>"
+                html += "</div>"
+            }
+            else {
+                for (var m = 0; m < product.Comments.length; m++) {
+                    html += "<div id='Comment'>"
+                    html += "<div id='UserInfo'>"
+                    html += "<p id='Username'><b>" + product.Comments[m].Author + "</b></p>"
+                    html += "<p id='UserGroup'>" + product.Comments[m].Published.substring(0, 10) + "</p>"
+                    html += "</div>"
+                    html += "<hr>"
+                    html += "<div id='UserComment'>"
+                    html += "<article class='Article'>" + product.Comments[m].Text + "</article>"
+                    html += "</div>"
+                    html += "</div>"
+                }
+            }
+            document.getElementById("CommentsDiv").innerHTML = html;
+        });
     });
 }
