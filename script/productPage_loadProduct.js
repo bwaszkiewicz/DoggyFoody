@@ -62,7 +62,7 @@ function generatePage() {
         html += "<div id='Comment'>"
         html += "<div id='UserInfo'>"
         html += "<p id='Username'><b>"+product.Comments[m].Author+"</b></p>"
-        html += "<p id='UserGroup'>"+product.Comments[m].Published.substring(0,9)+"</p>"
+        html += "<p id='UserGroup'>"+product.Comments[m].Published.substring(0,10)+"</p>"
         html += "</div>"
         html += "<hr>"
         html += "<div id='UserComment'>"
