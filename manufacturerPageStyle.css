@@ -80,50 +80,109 @@
     color: var(--background-color2);
 }
 
-.WindowNews #ManufacturerShow{
+.WindowNews #SortFilterPanel{
+    height: 50px;
+    display: flex;
+    align-content: flex-end;
+}
+
+.WindowNews #SortFilterPanel div{
+    font-size: 12pt;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-content: center;
+    align-items: center;
+}
+
+.WindowNews #SortFilterPanel p{
+    color: var(--shadow-color1);
+    font-size: 12pt;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.WindowNews #SortFilterPanel #SortSelectDiv, #SearchFieldDiv{
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.WindowNews #SortFilterPanel #SortButtonDiv{
+    flex-grow: 8;
+    justify-content: flex-end;
+}
+
+.WindowNews #SortFilterPanel #SortButtonDiv button{
+    margin-right: 20px;
+    font-size: 12pt;
+    text-decoration: none;
+    padding: 5pt 20pt;   
+    color: var(--foreground-color1);
+    background-color: var(--background-color1);
+    border-radius: 10px;
+    border: none;
+}
+
+.WindowNews #SortFilterPanel #SortButtonDiv button:hover{
+    background-color: var(--foreground-color2);
+}
+
+.WindowNews #SortPanelSpacer{
+    color: var(--background-color1);
+    margin: 0px;
     margin-left: 1vw;
     margin-right: 1vw;
 }
 
-#ManufacturerShow #ManufacturerDiv {
+.WindowNews #ProductShow{
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+#ProductShow div #ProductImage{
+    width: 150px;
+    height: 150px;
+    border: 4px solid var(--background-color2);
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+#ProductShow #ProductDiv {
     display: flex;
     margin-top: 15px;
 }
 
-#ManufacturerDiv:hover {
+#ProductShow #ProductDiv:hover {
     background-color: #fff8dd;
 }
 
-#ManufacturerShow #ManufacturerDiv{
+#ProductShow #ProductInfo{
     display: flex;
     flex-direction: column;
 }
 
-#ManufacturerName{
-    font-size: 26pt;
+#ProductShow #ProductInfo #ProductName{
+    font-size: 16pt;
     margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-#ManufacturerAddress{
     margin-bottom: 10px;
 }
 
-#ManufacturerCount{
-    margin-bottom: 10px;
+#ProductInfo .Rating{
+    font-size: 16pt;
 }
 
-#ManufacturerDiv p{
+#ProductShow #ProductInfo p{
     text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
 
-#ManufacturerShow a:link,#ManufacturerShow a:active,#ManufacturerShow a:visited {
+#ProductShow a:link a:active a:visited {
     text-decoration: none;
     color: var(--background-color2);
 }
 
-#ManufacturerShow hr{
-    width: 100%;
+#ProductShow hr{
     color: var(--background-color1);
     margin-top: 15px;
 }
