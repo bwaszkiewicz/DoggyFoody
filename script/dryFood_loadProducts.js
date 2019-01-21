@@ -1,52 +1,54 @@
 /* Setter of product info at dryFood.html */
 
 function generateProducts() {
-    fetch("https://doggyfoodyapi.azurewebsites.net/api/products").then(function (response) {
+    fetch("https://doggyfoodyapi.azurewebsites.net/api/products/foodType?foodType=Dry").then(function (response) {
         return response.json();
     }).then(function (myJson) {
 
-        //data = array of json objects (products)
-        let data = myJson;
+        fetch("https://doggyfoodyapi.azurewebsites.net/api/manufacturers").then(function (response1) {
+            return response1.json();
+        }).then(function (manufacturerJson) {
+
+        let manufacturer = manufacturerJson;
+        let product = myJson;
 
         let html = "";
 
-        for (var product in data) {
-            if (product.FoodType.localeCompare("Dry") == 0) {
-                for (var i = 0; i < Object.keys(data).length; i++) {
-                    html += "<a id='ProductLink' href='./productPage.html?id=" + product.Id + "' >";
-                    html += "<div id='ProductDiv'>";
-                    html += "<img id='ProductImage' src='./products/" + product.Id + ".jpg'>";
-                    html += "<div id='ProductInfo'>";
-                    html += "<p id='ProductName'><b>" + product.Name + "</b></p>";
-                    html += "<p id='ProductRating'>Rating: ";
+        for (var i = 0; i < product.length; i++) {
 
-                    //add rating stars
-                    for (var j = 0; j < Math.round(product.Score); j++) {
-                        html += "<span class='Rating'>★</span>"
-                    }
-                    //fill missing rating stars
-                    for (var k = 0; k < (5 - Math.round(product.Score)); k++) {
-                        html += "<span class='Rating'>☆</span>"
-                    }
+                html += "<a id='ProductLink' href='./productPage.html?id=" + product[i].Id + "'>";
+                html += "<div id='ProductDiv'>";
+                html += "<img id='ProductImage' src='"+ product[i].ImageAddress +"'>";
+                html += "<div id='ProductInfo'>";
+                html += "<p id='ProductName'><b>" + product[i].Name + "</b></p>";
+                html += "<p id='ProductRating'>Rating: ";
 
-                    html += "</p>";
-
-                    fetch("https://doggyfoodyapi.azurewebsites.net/api/manufacturers?id=" + product.ManufacturerId).then(function (response) {
-                        return response.json();
-                    }).then(function (manufacturerJson) {
-
-                        html += "<p id='ProductManufacturer'>Manufacturer:" + manufacturerJson.Name + "</p>";
-
-                    });
-
-                    html += "</div>";
-                    html += "</div>";
-                    html += "</a>";
-                    html += "<hr>";
+                //add rating stars
+                for (var j = 0; j < Math.round(product[i].Score); j++) {
+                    html += "<span class='Rating'>★</span>"
                 }
-            }
+                //fill missing rating stars
+                for (var k = 0; k < (5 - Math.round(product[i].Score)); k++) {
+                    html += "<span class='Rating'>☆</span>"
+                }
+
+                html += "</p>";
+
+                for (var o = 0; o < manufacturer.length; o++) {
+                    if(manufacturer[o].Id == product[i].ManufacturerId)
+                    {
+                        html += "<p id='ProductManufacturer'>Manufacturer: " + manufacturer[o].Name + "</p>";
+                        break;
+                    }
+                }
+
+                html += "</div>";
+                html += "</div>";
+                html += "</a>";
+                html += "<hr>";  
+           
         }
         document.getElementById("ProductShow").innerHTML = html;
-
+    });
     });
 }
