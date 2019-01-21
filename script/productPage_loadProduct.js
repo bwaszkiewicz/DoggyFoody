@@ -1,6 +1,6 @@
 /* Setter of product info at productPage.html */
 
-function generateProduct() {
+function generatePage() {
 
     // get param
     let productId = location.search.split('id=')[1]
@@ -16,6 +16,7 @@ function generateProduct() {
         }).then(function (manufacturerJson) {
 
         let html = "";
+        let productRating = 0.0;
 
         html += "<img id='ProductImage' src='"+ product.ImageAddress +"'>";
         html += "<div id='ProductInfo'>";
@@ -24,12 +25,17 @@ function generateProduct() {
         html += "<p id='ProductRating'><b>Rating: </b>";
         html += "<span id='RatingContainer'>";
 
+        for (var l = 0; l < product.Rates.length; l++) {
+            productRating += product.Rates[l].Score;
+        }
+        productRating = productRating / product.Rates.length;
+
         //fill rating stars
-        for (var k = 0; k < (5 - Math.round(product.Score)); k++) {
+        for (var k = 0; k < (5 - Math.round(productRating)); k++) {
             html += "<span class='Rating' onclick=''>☆</span>"
         }
-        for (var j = 0; j < Math.round(product.Score); j++) {
-            html += "<span id='rating1' class='Rating' onclick=''>★</span>"
+        for (var j = 0; j < Math.round(productRating); j++) {
+            html += "<span class='Rating' onclick=''>★</span>"
         }
 
         html += "</span>";
@@ -48,6 +54,24 @@ function generateProduct() {
 
         document.getElementById("ProductDiv").innerHTML = html;
 
+        //COMMENT SECTION
+
+        html = "";
+        for (var m = 0; m < product.Comments.length; m++) 
+        {
+        html += "<div id='Comment'>"
+        html += "<div id='UserInfo'>"
+        html += "<p id='Username'><b>"+product.Comments[m].Author+"</b></p>"
+        html += "<p id='UserGroup'>"+product.Comments[m].Published.substring(0,9)+"</p>"
+        html += "</div>"
+        html += "<hr>"
+        html += "<div id='UserComment'>"
+        html += "<article class='Article'>"+product.Comments[m].Text+"</article>"
+        html += "</div>"
+        html += "</div>"
+        }
+
+        document.getElementById("CommentsDiv").innerHTML = html;
     });
     });
 }

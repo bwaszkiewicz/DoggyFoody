@@ -9,7 +9,8 @@
         <link
             href="https://fonts.googleapis.com/css?family=Montserrat:600,700,800"
             rel="stylesheet">
-        <script type="text/javascript" src="./script/productPage_loadProduct.js"></script>
+        <script type="text/javascript"
+            src="./script/productPage_loadProduct.js"></script>
     </head>
 
     <body>
@@ -72,9 +73,9 @@
 
                 <div class="WindowNews">
                     <div id="ProductSection">
-                        
-                    <div id="ProductDiv">
-                        <!--complete product section
+
+                        <div id="ProductDiv">
+                            <!--complete product section
                         <img id="ProductImage" src="./products/Product2.jpg">
                         <div id="ProductInfo">
                             <p id="ProductName">Pedigree Adult Chicken</p>
@@ -93,126 +94,63 @@
                             <p id="ProductIngredients"><b>Ingredients:</b> dog food 99%, air 1%</p>
                             <p id="ProductDescription"><b>Description:</b> Tastes like dog food.</p>
                         </div>-->
-                    </div>
+                        </div>
 
-                    <script>
-                    generateProduct();
+                        <script>
+                    generatePage();
                     </script>
+                        <div id="CommentsSection">
+                            <h1> User comments</h1>
 
-                    <div id="CommentsSection">
-                    <h1> User comments</h1>
-
-                    <!-- one comment embodies in Comment div -->
-                    <div id="Comment">
-                        <div id="UserInfo">
-                            <p id="Username"><b>MistGun</b></p>
-                            <p id="UserGroup">User</p>
+                            <div id="CommentsDiv">
+                                <!-- one comment embodies in Comment div 
+                                <div id="Comment">
+                                    <div id="UserInfo">
+                                        <p id="Username"><b>MistGun</b></p>
+                                        <p id="UserGroup">User</p>
+                                    </div>
+                                    <hr>
+                                    <div id="UserComment">
+                                        <article class="Article">
+                                            Indeed, it tastes like dog food!
+                                        </article>
+                                    </div>
+                                </div>-->
+                            </div>
+                            <div>
+                                <div id="AddCommentSection">
+                                    <h1 id="AddYourCommentHeader">Add your
+                                        comment</h1>
+                                    <form>
+                                        <textarea rows="5" maxlength="256"></textarea>
+                                        <input type="submit" value="Post"
+                                            id="submitComment">
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="SeparateLink">
+                                <a href="signIn.html">» You have to be logged in
+                                    to add
+                                    comment! «</a> <!-- div to be set if user is not logged in -->
+                            </div>
+                            <br />
                         </div>
-                        <hr>
-                        <div id="UserComment">
-                            <article class="Article">
-                                Indeed, it tastes like dog food! Lorem ipsum
-                                dolor sit
-                                amet, consectetur adipiscing elit. Nullam et
-                                elit sed nulla aliquam porta. Cras
-                                iaculis ac sapien vitae pharetra. Maecenas
-                                auctor ultrices erat, id malesuada mauris
-                                pellentesque eu.
-                                Fusce fringilla, nisi et blandit congue, nisi
-                                erat varius risus, non euismod enim dui
-                                quis risus.
-                                Vivamus vel neque in ante porta dictum.
-                                Phasellus dignissim, massa et vehicula varius,
-                                lectus tellus
-                                aliquet eros, sit amet placerat tortor neque et
-                                tortor. Fusce purus tellus, imperdiet
-                                vitae tincidunt
-                                venenatis, sollicitudin et lectus.
-                            </article>
-                        </div>
-                    </div>
-                    <div id="Comment">
-                        <div id="UserInfo">
-                            <p id="Username"><b>karo1404</b></p>
-                            <p id="UserGroup">Admin</p>
-                        </div>
-                        <hr>
-                        <div id="UserComment">
-                            <article class="Article">
-                                What am I even doing here...
-                            </article>
-                        </div>
-                    </div>
-                    <div id="Comment">
-                        <div id="UserInfo">
-                            <p id="Username"><b>kokon666-veeeeery-long-nickname-for-testing-purposes</b></p>
-                            <p id="UserGroup">User</p>
-                        </div>
-                        <hr>
-                        <div id="UserComment">
-                            <article class="Article">
-                                btw. JP100% Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit. Nullam et
-                                elit sed nulla aliquam porta. Cras
-                                iaculis ac sapien vitae pharetra. Maecenas
-                                auctor ultrices erat, id malesuada mauris
-                                pellentesque eu.
-                                Fusce fringilla, nisi et blandit congue, nisi
-                                erat varius risus, non euismod enim dui
-                                quis risus.
-                                Vivamus vel neque in ante porta dictum.
-                                Phasellus dignissim, massa et vehicula varius,
-                                lectus tellus
-                                aliquet eros, sit amet placerat tortor neque et
-                                tortor. Fusce purus tellus, imperdiet
-                                vitae tincidunt
-                                venenatis, sollicitudin et lectus.Fusce
-                                fringilla, nisi et blandit congue, nisi erat
-                                varius
-                                risus, non euismod enim dui
-                                quis risus.
-                                Vivamus vel neque in ante porta dictum.
-                                Phasellus dignissim, massa et vehicula varius,
-                                lectus tellus
-                                aliquet eros, sit amet placerat tortor neque et
-                                tortor. Fusce purus tellus, imperdiet
-                                vitae tincidunt
-                                venenatis, sollicitudin et lectus.
-                            </article>
-                        </div>
-                    </div>
-                    <div>
-                        <div id="AddCommentSection">
-                            <h1 id="AddYourCommentHeader">Add your comment</h1>
-                            <form>
-                                <textarea rows="5" maxlength="256"></textarea>
-                                <input type="submit" value="Post"
-                                    id="submitComment">
-                            </form>
-                        </div>
-                    </div>
-                    <div class="SeparateLink">
-                        <a href="signIn.html">» You have to be logged in to add
-                            comment! «</a> <!-- div to be set if user is not logged in -->
-                    </div>
-                    <br />
-                </div>
 
-            </section>
+                    </section>
 
-            <!-- Footer -->
-            <br/><br/>
-                    <footer>
-                        <div id="FooterText">
-                            © Doggy Foody Team<br><br>doggyfoody@mail.com<br>tel.
-                            +32 222222-22223
-                        </div>
-                    </footer>
+                    <!-- Footer -->
+                    <br/><br/>
+                            <footer>
+                                <div id="FooterText">
+                                    © Doggy Foody Team<br><br>doggyfoody@mail.com<br>tel.
+                                    +32 222222-22223
+                                </div>
+                            </footer>
 
-                </main>
+                        </main>
 
 
 
-            </body>
+                    </body>
 
-        </html>
+                </html>
