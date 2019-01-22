@@ -1,0 +1,42 @@
+@import "./mainStyle.css";
+
+
+.MainLogoutBlock{
+    position: relative;
+    margin-top: 80px;
+    margin-left: 30%;
+    margin-bottom: 80px;
+    width: 40%;
+    max-height: 20%;
+    min-width: var(--min-page-width)/2;
+    border-radius: 10px;
+    background-color: var(--foreground-color1);
+    box-shadow: 5px 10px var(--shadow-color1);
+    color: var(--foreground-color1);
+
+}
+
+.MainLogoutBlock h1{
+    z-index: 4;
+    font-size: 16pt;
+    background-color: var(--background-color1);
+    color: var(--foreground-color1);
+    text-indent: 10px;
+    position: relative;
+    top: -1px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.MainLogoutBlock div{
+    width: 100%;
+    display: inline-block;
+    overflow:auto;
+}

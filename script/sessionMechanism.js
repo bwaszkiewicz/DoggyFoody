@@ -1,8 +1,8 @@
 function checkSession() {
     if (sessionStorage.getItem("SignIn") == "1"){
-        document.getElementById("LinkBarTableFirstLink").href="userPanel.html";
+        document.getElementById("LinkBarTableFirstLink").href="UserPanel.html";
         document.getElementById("LinkBarTableFirstText").innerHTML="User Panel";
-        document.getElementById("LinkBarTableSecondLink").href="stories.html";
+        document.getElementById("LinkBarTableSecondLink").href="Logout.html";
         document.getElementById("LinkBarTableSecondText").innerHTML="Logout";
     } else {
         document.getElementById("LinkBarTableFirstLink").href="SignIn.html";
