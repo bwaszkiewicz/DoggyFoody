@@ -31,9 +31,13 @@ function generateProducts() {
                         html += "<span class='Rating'>☆</span>"
                     }
                 }
-                else if(product[i].Rates.length() > 0)
+                else 
                 {
-                    
+                    console.log(product[i].Rates.length());
+                if(product[i].Rates.length() == 0)
+                {
+
+                }
                 for (var l = 0; l < product[i].Rates.length; l++) {
                     productRating += product[i].Rates[l].Score;
                 }
@@ -48,12 +52,7 @@ function generateProducts() {
                         html += "<span class='Rating'>☆</span>"
                     }
                 }
-                else
-                {
-                    for (var k = 0; k < 5 ; k++) {
-                        html += "<span class='Rating'>☆</span>"
-                    } 
-                }
+
                 html += "</p>";
 
                 for (var o = 0; o < manufacturer.length; o++) {
