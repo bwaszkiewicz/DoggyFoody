@@ -26,12 +26,14 @@ function generateProducts() {
                 html += "<p id='ProductName'><b>" + product[i].Name + "</b></p>";
                 html += "<p id='ProductRating'>Rating: ";
 
-                if(product[i].Rates == null || product[i].Rates == "[]"){
+                if(product[i].Rates == null){
                     for (var k = 0; k < 5 ; k++) {
                         html += "<span class='Rating'>☆</span>"
                     }
                 }
-                else{
+                else if(product[i].Rates.length() > 0)
+                {
+                    
                 for (var l = 0; l < product[i].Rates.length; l++) {
                     productRating += product[i].Rates[l].Score;
                 }
@@ -45,6 +47,12 @@ function generateProducts() {
                     for (var k = 0; k < (5 - Math.round(productRating)); k++) {
                         html += "<span class='Rating'>☆</span>"
                     }
+                }
+                else
+                {
+                    for (var k = 0; k < 5 ; k++) {
+                        html += "<span class='Rating'>☆</span>"
+                    } 
                 }
                 html += "</p>";
 
