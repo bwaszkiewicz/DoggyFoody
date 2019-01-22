@@ -31,29 +31,35 @@ function checkCookies(){
 function checkSignIn(login, psw){
     //TODO
  
+    var correctData;
+    var ready = false
+
 	fetch("https://doggyfoodyapi.azurewebsites.net/api/users/login?username="+login+"&password="+psw).then(function(response) {
     return response.json();}).then(function(myJson){
         var data = myJson;
         
+        ready = true;
+
         if(data.Login==login){
-            if(document.getElementById("rememberCheckbox").checked == true) {
-                setCookie("userlogin",document.getElementById("loginSignIn").value,1);
-            }
-            window.location.href = "index.html";
+            correctData = true;
         } else {
-            return false;
+            correctData = false;
         }
 
     });
+
+    while(!ready)
+    { }
+    return correctData;
 }
 
 function verification(){
 
     if(checkSignIn(document.getElementById("loginSignIn").value, document.getElementById("pswSignIn").value)) {
-        /*if(document.getElementById("rememberCheckbox").checked == true) {
+        if(document.getElementById("rememberCheckbox").checked == true) {
             setCookie("userlogin",document.getElementById("loginSignIn").value,1);
         }
-        window.location.href = "index.html";*/
+        window.location.href = "index.html";
     } else {
         document.getElementById("wrongLoginPswHint").innerHTML="Wrong login / password!";
         document.getElementById("wrongLoginPswHint").style.visibility="visible";
