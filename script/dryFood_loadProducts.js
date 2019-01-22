@@ -26,7 +26,7 @@ function generateProducts() {
                 html += "<p id='ProductName'><b>" + product[i].Name + "</b></p>";
                 html += "<p id='ProductRating'>Rating: ";
 
-                if(product[i].Rates == null){
+                if(product[i].Rates == null || product[i].Rates == "[]"){
                     for (var k = 0; k < 5 ; k++) {
                         html += "<span class='Rating'>☆</span>"
                     }
