@@ -40,17 +40,20 @@ function generateProducts() {
                     html += "<p id='ProductName'><b>" + product[i].Name + "</b></p>";
                     html += "<p id='ProductRating'>Rating: ";
 
-                    if (product[i].Rates == null || product[i].Rates == "[]") {
-                        for (var k = 0; k < 5; k++) {
+                    if(product[i].Rates == null){
+                        for (var k = 0; k < 5 ; k++) {
                             html += "<span class='Rating'>☆</span>"
                         }
                     }
-                    else {
-                        for (var l = 0; l < product[i].Rates.length; l++) {
-                            productRating += product[i].Rates[l].Score;
-                        }
-                        productRating = productRating / product[i].Rates.length;
-
+                    else 
+                    {
+                    if(JSON.stringify(product[i].Rates) != "[]")
+                    {
+                    for (var l = 0; l < product[i].Rates.length; l++) {
+                        productRating += product[i].Rates[l].Score;
+                    }
+                    productRating = productRating / product[i].Rates.length;
+            
                         //add rating stars
                         for (var j = 0; j < Math.round(productRating); j++) {
                             html += "<span class='Rating'>★</span>"
@@ -59,6 +62,12 @@ function generateProducts() {
                         for (var k = 0; k < (5 - Math.round(productRating)); k++) {
                             html += "<span class='Rating'>☆</span>"
                         }
+                    }
+                    else{
+                        for (var k = 0; k < 5 ; k++) {
+                            html += "<span class='Rating'>☆</span>"
+                        }  
+                    }
                     }
                     html += "</p>";
 

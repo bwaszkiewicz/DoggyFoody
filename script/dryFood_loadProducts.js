@@ -33,11 +33,8 @@ function generateProducts() {
                 }
                 else 
                 {
-                    console.log(JSON.stringify(product[i].Rates));
                 if(JSON.stringify(product[i].Rates) != "[]")
                 {
-
-                
                 for (var l = 0; l < product[i].Rates.length; l++) {
                     productRating += product[i].Rates[l].Score;
                 }
