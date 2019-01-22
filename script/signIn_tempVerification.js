@@ -31,7 +31,7 @@ function checkCookies(){
 function checkSignIn(login, psw){
     //TODO
  
-    var correctData = false;
+    var correctData;
 
 	fetch("https://doggyfoodyapi.azurewebsites.net/api/users/login?username="+login+"&password="+psw).then(function(response) {
     return response.json();}).then(function(myJson){
