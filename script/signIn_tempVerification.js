@@ -35,6 +35,11 @@ function checkSignIn(login, psw){
     return response.json();}).then(function(myJson){
         var data = myJson;
         
+        if(data.Login==login){
+            return true;
+        } else {
+            return false;
+        }
 
     /*
     if(login == "admin" && psw=="admin1234"){
