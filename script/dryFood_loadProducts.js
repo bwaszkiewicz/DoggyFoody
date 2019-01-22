@@ -33,7 +33,7 @@ function generateProducts() {
                 }
                 else 
                 {
-                    console.log(product[i].Rates.length());
+                    console.log(JSON.stringify(product[i].Rates));
                 if(product[i].Rates.length() == 0)
                 {
 
