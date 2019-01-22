@@ -30,9 +30,6 @@ function checkCookies(){
 
 function checkSignIn(login, psw){
     //TODO
- 
-    var correctData;
-    var ready = false
 
 	fetch("https://doggyfoodyapi.azurewebsites.net/api/users/login?username="+login+"&password="+psw).then(function(response) {
     return response.json();}).then(function(myJson){
@@ -41,29 +38,21 @@ function checkSignIn(login, psw){
         ready = true;
 
         if(data.Login==login){
-            correctData = true;
+            if(document.getElementById("rememberCheckbox").checked == true) {
+                setCookie("userlogin",document.getElementById("loginSignIn").value,1);
+            }
+            window.location.href = "index.html";
         } else {
-            correctData = false;
+            document.getElementById("wrongLoginPswHint").innerHTML="Wrong login / password!";
+            document.getElementById("wrongLoginPswHint").style.visibility="visible";
+            document.getElementById("loginSignIn").value = "";
+            document.getElementById("pswSignIn").value = "";
         }
-
     });
-
-    while(!ready)
-    { }
-    return correctData;
 }
 
 function verification(){
 
-    if(checkSignIn(document.getElementById("loginSignIn").value, document.getElementById("pswSignIn").value)) {
-        if(document.getElementById("rememberCheckbox").checked == true) {
-            setCookie("userlogin",document.getElementById("loginSignIn").value,1);
-        }
-        window.location.href = "index.html";
-    } else {
-        document.getElementById("wrongLoginPswHint").innerHTML="Wrong login / password!";
-        document.getElementById("wrongLoginPswHint").style.visibility="visible";
-        document.getElementById("loginSignIn").value = "";
-        document.getElementById("pswSignIn").value = "";
-    }
+checkSignIn(document.getElementById("loginSignIn").value, document.getElementById("pswSignIn").value)
+
 }
