@@ -29,12 +29,21 @@ function checkCookies(){
 }
 
 function checkSignIn(login, psw){
+    //TODO
+ 
+	fetch("https://doggyfoodyapi.azurewebsites.net/api/users/login?username={"+login+"}&password={"+psw+"}").then(function(response) {
+    return response.json();}).then(function(myJson){
+        var data = myJson;
+        
+
+    /*
     if(login == "admin" && psw=="admin1234"){
         return true;
     }
     else {
         return false;
-    }
+    }*/
+    });
 }
 
 function verification(){
