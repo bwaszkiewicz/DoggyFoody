@@ -300,7 +300,13 @@ body{
 
 /* MAIN */
 
-main img{
+#LoadingGif{
+    padding: 6vw;
+    margin-left: calc(50% - 50px - 6vw);
+    margin-right: calc(50% - 50px - 6vw);
+}
+
+main img:not(#LoadingGif){
     background-color: white;
 }
 
