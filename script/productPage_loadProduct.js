@@ -121,23 +121,36 @@ function addComment() {
     let presentDate = new Date();
     let submittedText = document.forms["submitComment"]["commentText"].value.toString();
 
-    fetch("https://doggyfoodyapi.azurewebsites.net/api/users?id=" + userId + "").then(response => response.json())
+
+    fetch("https://doggyfoodyapi.azurewebsites.net/api/users?id=" + userId).then(response => response.json())
         .then(myJson => {
 
             let userJson = myJson;
             let login = userJson.Login;
 
-            let xhr = new XMLHttpRequest();
-
-            xhr.open("POST", "https://doggyfoodyapi.azurewebsites.net/api/products/addComment?productId=" + productId + "&userId=" + userId + "", true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify(
+            let data = JSON.stringify(
                 {
                     Author: login,
                     Text: submittedText,
                     Published: presentDate
                 }
-            ));
+            );
+
+            fetch("https://doggyfoodyapi.azurewebsites.net/api/products/addComment?productId=" + productId + "&userId=" + userId, {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: data
+            }).then(res => res.json());
+
+
+           /* let xhr = new XMLHttpRequest();
+
+            xhr.open("POST", "https://doggyfoodyapi.azurewebsites.net/api/products/addComment?productId=" + productId + "&userId=" + userId + "", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(data);*/
         });
 }
 
@@ -154,8 +167,7 @@ function rate(rating) {
             'Content-Type': 'application/json'
         },
         body: data
-    }).then(res => res.json())
-        .then(res => console.log(res));
+    }).then(res => res.json());
 
         document.getElementById("ProductRating").innerHTML = "Thank You!"
 }
