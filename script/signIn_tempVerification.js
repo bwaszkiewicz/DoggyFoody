@@ -21,7 +21,7 @@ function setCookie(cname, cvalue, exdays) {
   }
 
 function checkCookies(){
-    if(sessionStorage.Storage.getItem("SignIn") == "1"){
+    if(sessionStorage.getItem("SignIn") == "1"){
         document.getElementById("LinkBarTableFirstLink").href="UserPanel.html";
         document.getElementById("LinkBarTableFirstText").innerHTML="User Panel";
         document.getElementById("LinkBarTableSecondLink").href="Logout.html";
