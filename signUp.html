@@ -8,9 +8,10 @@
     <link rel="shortcut icon" href="./img/doggy_icon.ico"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">  
     <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src="./script/sessionMechanism.js"></script>
 </head>
 
-<body>
+<body onload="signUpCheckSession()">
 
     <!-- Top bar section -->
     <header>
@@ -67,7 +68,7 @@
             <!-- Section of sign up-->
             <section class="MainSignUpBlock">
                     <h1>Sign up</h1>
-                    <div>
+                    <div id="signUpMainBlockDiv">
                         <form>
                             <p>Login</p>
                             <input type="text" id="loginSignUp" class="inputText">

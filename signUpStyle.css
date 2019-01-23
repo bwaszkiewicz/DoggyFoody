@@ -63,6 +63,7 @@
     width: 100%;
     display: inline-block;
     overflow:auto;
+    color: red;
 }
 
 .MainSignUpBlock #submitSignUp{
