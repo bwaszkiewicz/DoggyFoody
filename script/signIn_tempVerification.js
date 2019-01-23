@@ -53,7 +53,7 @@ function checkSignIn(login, psw){
                 setCookie("userlogin",document.getElementById("loginSignIn").value,1);
             }
             sessionStorage.setItem("SignIn", "1");
-            sessionStorage.setItem("LoginUser", data.login);
+            sessionStorage.setItem("UserId", data.Id);
             window.location.href = "index.html";
         } else {
             document.getElementById("wrongLoginPswHint").innerHTML="Wrong login / password!";
