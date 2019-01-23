@@ -99,7 +99,7 @@ function setUserCommentSection() {
 
         html += "<div id='AddCommentSection'>";
         html += "<h1 id='AddYourCommentHeader'>Add your comment</h1 >";
-        html += "<form name='submitComment' onsubmit='return addComment()' method='post'>";
+        html += "<form name='submitComment' onsubmit='addComment()' method='post'>";
         html += "<textarea name='commentText' rows = '5' maxlength = '256' ></textarea >";
         html += "<input type = 'submit' value = 'Post' id='submitComment'>";
         html += "</form>";
@@ -121,16 +121,17 @@ function setUserCommentSection() {
 function addComment() {
 
     let userId = sessionStorage.getItem("UserId").toString();
+    let productId = location.search.split('id=')[1]
+    let presentDate = new Date();
+    let submittedText = document.forms["submitComment"]["commentText"].value.toString();
 
     fetch("https://doggyfoodyapi.azurewebsites.net/api/users?id=" + userId.toString() + "").catch(err => console.error('Caught error: ', err)).then(function (response) {
         console.log(response);
         return response.json();
     }).then(function (userJson) {
 
-        let login = JSON.stringify(userJson.Login);
-        let productId = location.search.split('id=')[1]
-        let presentDate = new Date();
-        let submittedText = document.forms["myFormsubmitComment"]["commentText"].value;
+        let login = userJson.Login;
+
 
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "https://doggyfoodyapi.azurewebsites.net/api/products/addComment?productId="+productId+"&userId="+userId+"", true);
@@ -139,7 +140,7 @@ function addComment() {
             {
             Author: login,
             Text: submittedText,
-            Published: presentDate.toString()
+            Published: presentDate
         }
         ));
     });
