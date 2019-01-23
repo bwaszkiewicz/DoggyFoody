@@ -7,9 +7,10 @@
     <link rel="stylesheet" type="text/css" href="userPanelStyle.css">
     <link rel="shortcut icon" href="./img/doggy_icon.ico"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">  
+    <script type="text/javascript" src="./script/sessionMechanism.js"></script>
 </head>
 
-<body>
+<body onload="userPanelCheckSession()">
 
     <!-- Top bar section -->
     <header>
@@ -66,8 +67,8 @@
         <!-- Section of User Panel-->
         <section class="MainUserPanelBlock">
             <h1>User Panel</h1>
-            <div>
-
+            <div id="UserPanelMainBlockDiv">
+                
             </div>
         </section>
 
