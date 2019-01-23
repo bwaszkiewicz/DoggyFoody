@@ -84,31 +84,63 @@ function generatePage() {
                 }
             }
             document.getElementById("CommentsDiv").innerHTML = html;
-
-            html = "";
-
-            //check if logged in
-            if (sessionStorage.getItem("SignIn") == "1") {
-
-                html += "<div id='AddCommentSection'>";
-                html += "<h1 id='AddYourCommentHeader'>Add your comment</h1 >";
-                html += "<form>";
-                html += "<textarea rows = '5' maxlength = '256' ></textarea >";
-                html += "<input type = 'submit' value = 'Post' id = 'submitComment'>";
-                html += "</form>";
-                html += "</div>";
-
-                document.getElementById("AddCommentDiv").innerHTML = html;
-
-            } else {
-
-                html += "<div class='SeparateLink'>";
-                html += "<a href='signIn.html'>» You have to be logged in to add comment! «</a>";
-                html += "</div>";
-
-                document.getElementById("AddCommentDiv").innerHTML = html;
-
-            }
         });
+    });
+
+    setUserCommentSection();
+}
+
+function setUserCommentSection() {
+
+    let html = "";
+
+    //check if logged in
+    if (sessionStorage.getItem("SignIn") == "1") {
+
+        html += "<div id='AddCommentSection'>";
+        html += "<h1 id='AddYourCommentHeader'>Add your comment</h1 >";
+        html += "<form name='submitComment' onsubmit='return addComment()' method='post'>";
+        html += "<textarea name='commentText' rows = '5' maxlength = '256' ></textarea >";
+        html += "<input type = 'submit' value = 'Post' id='submitComment'>";
+        html += "</form>";
+        html += "</div>";
+
+        document.getElementById("AddCommentDiv").innerHTML = html;
+
+    } else {
+
+        html += "<div class='SeparateLink'>";
+        html += "<a href='signIn.html'>» You have to be logged in to add comment! «</a>";
+        html += "</div>";
+
+        document.getElementById("AddCommentDiv").innerHTML = html;
+
+    }
+}
+
+function addComment() {
+
+    let userId = sessionStorage.getItem("UserId").toString();
+
+    fetch("https://doggyfoodyapi.azurewebsites.net/api/users?id=" + userId.toString() + "").catch(err => console.error('Caught error: ', err)).then(function (response) {
+        console.log(response);
+        return response.json();
+    }).then(function (userJson) {
+
+        let login = JSON.stringify(userJson.Login);
+        let productId = location.search.split('id=')[1]
+        let presentDate = new Date();
+        let submittedText = document.forms["myFormsubmitComment"]["commentText"].value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://doggyfoodyapi.azurewebsites.net/api/products/addComment?productId="+productId+"&userId="+userId+"", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify(
+            {
+            Author: login,
+            Text: submittedText,
+            Published: presentDate.toString()
+        }
+        ));
     });
 }
