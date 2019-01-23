@@ -145,13 +145,8 @@ function rate(rating) {
 
     let userId = sessionStorage.getItem("UserId").toString();
     let productId = location.search.split('id=')[1];
-    //let xhr = new XMLHttpRequest();
-    let data = JSON.stringify({ Score: rating.toString(), Id: userId });
+    let data = JSON.stringify({ Score: rating });
 
-   /* xhr.open("POST", "https://doggyfoodyapi.azurewebsites.net/api/products/addRate?productId=" + productId + "&userId=" + userId + "", true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(data).catch(console.log);
-*/
     fetch("https://doggyfoodyapi.azurewebsites.net/api/products/addRate?productId=" + productId + "&userId=" + userId, {
         method: 'post',
         headers: {
@@ -162,18 +157,6 @@ function rate(rating) {
     }).then(res => res.json())
         .then(res => console.log(res));
 
-    /*(async () => {
-        const rawResponse = await fetch("https://doggyfoodyapi.azurewebsites.net/api/products/addRate?productId=" + productId + "&userId=" + userId + "", {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({Score: rating.toString(),Id: userId})
-        });
-        const content = await rawResponse.json();
-      
-        console.log(content);
-      })();
-*/
+
+    location.reload();
 }
