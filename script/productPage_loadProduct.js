@@ -35,16 +35,15 @@ function generatePage() {
                     html += "<span class='Rating' onclick=''>☆</span>"
                 }
             }
-            else
-            {
-            //fill rating stars
-            for (var k = 0; k < (5 - Math.round(productRating)); k++) {
-                html += "<span class='Rating' onclick=''>☆</span>"
+            else {
+                //fill rating stars
+                for (var k = 0; k < (5 - Math.round(productRating)); k++) {
+                    html += "<span class='Rating' onclick=''>☆</span>"
+                }
+                for (var j = 0; j < Math.round(productRating); j++) {
+                    html += "<span class='Rating' onclick=''>★</span>"
+                }
             }
-            for (var j = 0; j < Math.round(productRating); j++) {
-                html += "<span class='Rating' onclick=''>★</span>"
-            }
-        }
             html += "</span>";
             html += "</p>";
 
@@ -60,8 +59,6 @@ function generatePage() {
             html += "</div>";
 
             document.getElementById("ProductDiv").innerHTML = html;
-
-            //COMMENT SECTION
 
             html = "";
 
@@ -87,6 +84,31 @@ function generatePage() {
                 }
             }
             document.getElementById("CommentsDiv").innerHTML = html;
+
+            html = "";
+
+            //check if logged in
+            if (sessionStorage.getItem("SignIn") == "1") {
+
+                html += "<div id='AddCommentSection'>";
+                html += "<h1 id='AddYourCommentHeader'>Add your comment</h1 >";
+                html += "<form>";
+                html += "<textarea rows = '5' maxlength = '256' ></textarea >";
+                html += "<input type = 'submit' value = 'Post' id = 'submitComment'>";
+                html += "</form>";
+                html += "</div>";
+
+                document.getElementById("AddCommentDiv").innerHTML = html;
+
+            } else {
+
+                html += "<div class='SeparateLink'>";
+                html += "<a href='signIn.html'>» You have to be logged in to add comment! «</a>";
+                html += "</div>";
+
+                document.getElementById("AddCommentDiv").innerHTML = html;
+
+            }
         });
     });
 }
