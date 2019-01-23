@@ -48,7 +48,7 @@ function SignInCheckSession() {
     }
 }
 
-function SignUpCheckSession() {
+function signUpCheckSession() {
     if(sessionStorage.getItem("SignIn") == "1"){
         document.getElementById("LinkBarTableFirstLink").href="UserPanel.html";
         document.getElementById("LinkBarTableFirstText").innerHTML="User Panel";
