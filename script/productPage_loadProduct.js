@@ -155,7 +155,6 @@ function rate(rating) {
         },
         body: data
     }).then(res => res.json())
-        .then(res => console.log(res));
+        .then(res => console.log(res)).then(document.getElementById("RatingContainer").innerHTML = "Thank you!").then(setTimeout(location.reload(), 3000));
 
-        setTimeout(location.reload(), 2000);
 }
