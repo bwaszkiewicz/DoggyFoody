@@ -99,7 +99,7 @@ function setUserCommentSection() {
 
         html += "<div id='AddCommentSection'>";
         html += "<h1 id='AddYourCommentHeader'>Add your comment</h1 >";
-        html += "<form name='submitComment' onsubmit='addComment()' method='post'>";
+        html += "<form name='submitComment' action='" + window.location + "' onsubmit='addComment()' method='post'>";
         html += "<textarea name='commentText' rows = '5' maxlength = '256' ></textarea >";
         html += "<input type = 'submit' value = 'Post' id='submitComment'>";
         html += "</form>";
@@ -125,23 +125,22 @@ function addComment() {
     let presentDate = new Date();
     let submittedText = document.forms["submitComment"]["commentText"].value.toString();
 
-    fetch("https://doggyfoodyapi.azurewebsites.net/api/users?id=" + userId.toString() + "").catch(err => console.error('Caught error: ', err)).then(function (response) {
-        console.log(response);
-        return response.json();
-    }).then(function (userJson) {
+    fetch("https://doggyfoodyapi.azurewebsites.net/api/users?id=" + userId + "").then(response => response.json()).catch(console.log)
+        .then(myJson => {
+ 
+            let userJson = myJson;
+            let login = userJson.Login;
 
-        let login = userJson.Login;
+            let xhr = new XMLHttpRequest();
 
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://doggyfoodyapi.azurewebsites.net/api/products/addComment?productId="+productId+"&userId="+userId+"", true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify(
-            {
-            Author: login,
-            Text: submittedText,
-            Published: presentDate
-        }
-        ));
-    });
+            xhr.open("POST", "https://doggyfoodyapi.azurewebsites.net/api/products/addComment?productId=" + productId + "&userId=" + userId + "", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(
+                {
+                    Author: login,
+                    Text: submittedText,
+                    Published: presentDate
+                }
+            ));
+        });
 }
