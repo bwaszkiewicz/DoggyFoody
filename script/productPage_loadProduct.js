@@ -95,10 +95,10 @@ function setUserCommentSection() {
 
         html += "<div id='AddCommentSection'>";
         html += "<h1 id='AddYourCommentHeader'>Add your comment</h1 >";
-        html += "<form name='submitComment' action='" + window.location + "' onsubmit='addComment()' method='post'>";
-        html += "<textarea name='commentText' rows = '5' maxlength = '256' ></textarea >";
-        html += "<input type = 'submit' value = 'Post' id='submitComment'>";
-        html += "</form>";
+        //html += "<form name='submitComment' action='" + window.location + "' onsubmit='addComment()' method='post'>";
+        html += "<textarea id='commentText' rows = '5' maxlength = '256' ></textarea >";
+        html += "<input type = 'button' value = 'Post' onclick='addComment()' id='submitComment'>";
+        //html += "</form>";
         html += "</div>";
 
         document.getElementById("AddCommentDiv").innerHTML = html;
@@ -119,11 +119,12 @@ function addComment() {
     let userId = sessionStorage.getItem("UserId").toString();
     let productId = location.search.split('id=')[1];
     let presentDate = new Date();
-    let submittedText = document.forms["submitComment"]["commentText"].value.toString();
 
+    let submittedText = document.getElementById("commentText").value.toString(); 
 
-    fetch("https://doggyfoodyapi.azurewebsites.net/api/users?id=" + userId).then(response => response.json())
-        .then(myJson => {
+    fetch("https://doggyfoodyapi.azurewebsites.net/api/users?id=" + userId).then(function (response) {
+        return response.json();
+    }).then(function (myJson) {
 
             let userJson = myJson;
             let login = userJson.Login;
@@ -145,13 +146,10 @@ function addComment() {
                 body: data
             }).then(res => res.json());
 
+        }).catch(console.log);
 
-           /* let xhr = new XMLHttpRequest();
-
-            xhr.open("POST", "https://doggyfoodyapi.azurewebsites.net/api/products/addComment?productId=" + productId + "&userId=" + userId + "", true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(data);*/
-        });
+        document.getElementById("AddCommentDiv").innerHTML = "<div class='SeparateLink'><a href="+location.href+">» Thank You! «</a></div>"
+        return false;
 }
 
 function rate(rating) {
