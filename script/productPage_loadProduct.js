@@ -155,6 +155,7 @@ function rate(rating) {
         },
         body: data
     }).then(res => res.json())
-        .then(res => console.log(res)).then(location.reload());
+        .then(res => console.log(res));
 
+        setTimeout(location.reload(), 2000);
 }
