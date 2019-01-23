@@ -31,27 +31,23 @@ function generatePage() {
             productRating = productRating / product.Rates.length;
 
             if (JSON.stringify(product.Rates) == "[]") {
-                for (var f = 0; f < 5; f++) {
-                    html += "<span class='Rating' onclick=''>☆</span>"
+                for (var f = 5; 0 < f; f--) {
+                    html += "<span class='Rating' onclick='rate(" + f + ")'>☆</span>"
                 }
             }
             else {
                 //fill rating stars
-                for (var k = 0; k < (5 - Math.round(productRating)); k++) {
-                    html += "<span class='Rating' onclick=''>☆</span>"
+                for (var k = 5; k > (Math.round(productRating)); k--) {
+                    html += "<span class='Rating' onclick='rate(" + k + ")'>☆</span>"
                 }
-                for (var j = 0; j < Math.round(productRating); j++) {
-                    html += "<span class='Rating' onclick=''>★</span>"
+                for (var j = Math.round(productRating); 0 < j; j--) {
+                    html += "<span class='Rating' onclick='rate(" + j + ")'>★</span>"
                 }
             }
             html += "</span>";
             html += "</p>";
 
-
-
             html += "<p id='ProductManufacturer'><b>Manufacturer: </b> " + manufacturerJson.Name + "</p>";
-
-
 
             html += "<p id='ProductIngredients'><b>Ingredients: </b>" + product.Ingredients + "</p>";
             html += "<p id='ProductDescription'><b>Description: </b>" + product.Description + "</p>";
@@ -121,13 +117,13 @@ function setUserCommentSection() {
 function addComment() {
 
     let userId = sessionStorage.getItem("UserId").toString();
-    let productId = location.search.split('id=')[1]
+    let productId = location.search.split('id=')[1];
     let presentDate = new Date();
     let submittedText = document.forms["submitComment"]["commentText"].value.toString();
 
-    fetch("https://doggyfoodyapi.azurewebsites.net/api/users?id=" + userId + "").then(response => response.json()).catch(console.log)
+    fetch("https://doggyfoodyapi.azurewebsites.net/api/users?id=" + userId + "").then(response => response.json())
         .then(myJson => {
- 
+
             let userJson = myJson;
             let login = userJson.Login;
 
@@ -143,4 +139,41 @@ function addComment() {
                 }
             ));
         });
+}
+
+function rate(rating) {
+
+    let userId = sessionStorage.getItem("UserId").toString();
+    let productId = location.search.split('id=')[1];
+    //let xhr = new XMLHttpRequest();
+    let data = JSON.stringify({ Score: rating.toString(), Id: userId });
+
+   /* xhr.open("POST", "https://doggyfoodyapi.azurewebsites.net/api/products/addRate?productId=" + productId + "&userId=" + userId + "", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(data).catch(console.log);
+*/
+    fetch("https://doggyfoodyapi.azurewebsites.net/api/products/addRate?productId=" + productId + "&userId=" + userId, {
+        method: 'post',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: data
+    }).then(res => res.json())
+        .then(res => console.log(res));
+
+    /*(async () => {
+        const rawResponse = await fetch("https://doggyfoodyapi.azurewebsites.net/api/products/addRate?productId=" + productId + "&userId=" + userId + "", {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({Score: rating.toString(),Id: userId})
+        });
+        const content = await rawResponse.json();
+      
+        console.log(content);
+      })();
+*/
 }
