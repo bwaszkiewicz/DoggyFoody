@@ -66,13 +66,12 @@ function generatePage() {
 
 function loadComments(productJson) {
     let html = "";
+    let userType = null;
+    let userLogin = null;
     if ("UserLogin" in localStorage) {
-        let userType = sessionStorage.getItem("UserType");
-        let userLogin = sessionStorage.getItem("UserLogin");
-    } else {
-        let userType = null;
-        let userLogin = null;
-    }
+        userType = sessionStorage.getItem("UserType");
+        userLogin = sessionStorage.getItem("UserLogin");
+    } 
 
     if (productJson.Comments == null || JSON.stringify(productJson.Comments) == "[]") {
         html += "<div id='Comment'>"
