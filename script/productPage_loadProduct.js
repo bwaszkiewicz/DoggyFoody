@@ -45,7 +45,7 @@ function generatePage() {
                 }
             }
             html += "</span>";
-            html += "<span> ("+product.Rates.length+" votes)</span>"
+            html += "<span> (" + product.Rates.length + " votes)</span>"
             html += "</p>";
 
             html += "<p id='ProductManufacturer'><b>Manufacturer: </b> " + manufacturerJson.Name + "</p>";
@@ -64,11 +64,15 @@ function generatePage() {
     setUserCommentSection();
 }
 
-function loadComments(productJson){
+function loadComments(productJson) {
     let html = "";
-    let userId = sessionStorage.getItem("UserId").toString();
-    let userType = sessionStorage.getItem("UserType").toString();
-    let userLogin = sessionStorage.getItem("UserLogin").toString();
+    if ("UserLogin" in localStorage) {
+        let userType = sessionStorage.getItem("UserType");
+        let userLogin = sessionStorage.getItem("UserLogin");
+    } else {
+        let userType = null;
+        let userLogin = null;
+    }
 
     if (productJson.Comments == null || JSON.stringify(productJson.Comments) == "[]") {
         html += "<div id='Comment'>"
@@ -79,22 +83,24 @@ function loadComments(productJson){
     }
     else {
         for (var m = 0; m < productJson.Comments.length; m++) {
-            html += "<div class='Comment' id='Comment"+productJson.Comments[m].Id+"'>"
+            html += "<div class='Comment' id='Comment" + productJson.Comments[m].Id + "'>"
             html += "<div id='UserInfo'>"
             html += "<p id='Username'><b>" + productJson.Comments[m].Author + "</b></p>"
             html += "<p id='UserGroup'>" + productJson.Comments[m].Published.substring(0, 10) + "</p>"
-            if(productJson.Comments[m].Author == userLogin || userType == 3 || userType == 7){
-            html += "<p id='DeleteComment' onclick='deleteComment("+productJson.Comments[m].Id+")'>Delete comment</p>"
+            if (userType !== null && userLogin !== null) { 
+            if (productJson.Comments[m].Author == userLogin || userType == 3 || userType == 7) {
+                html += "<p id='DeleteComment' onclick='deleteComment(" + productJson.Comments[m].Id + ")'>Delete comment</p>"
             }
-            html += "</div>"
-            html += "<hr>"
-            html += "<div id='UserComment'>"
-            html += "<article class='Article'>" + productJson.Comments[m].Text + "</article>"
-            html += "</div>"
-            html += "</div>"
         }
+        html += "</div>"
+        html += "<hr>"
+        html += "<div id='UserComment'>"
+        html += "<article class='Article'>" + productJson.Comments[m].Text + "</article>"
+        html += "</div>"
+        html += "</div>"
     }
-    document.getElementById("CommentsDiv").innerHTML = html;
+}
+document.getElementById("CommentsDiv").innerHTML = html;
 }
 
 function setUserCommentSection() {
@@ -131,36 +137,36 @@ function addComment() {
     let productId = location.search.split('id=')[1];
     let presentDate = new Date();
 
-    let submittedText = document.getElementById("commentText").value.toString(); 
+    let submittedText = document.getElementById("commentText").value.toString();
 
     fetch("https://doggyfoodyapi.azurewebsites.net/api/users?id=" + userId).then(function (response) {
         return response.json();
     }).then(function (myJson) {
 
-            let userJson = myJson;
-            let login = userJson.Login;
+        let userJson = myJson;
+        let login = userJson.Login;
 
-            let data = JSON.stringify(
-                {
-                    Author: login,
-                    Text: submittedText,
-                    Published: presentDate
-                }
-            );
+        let data = JSON.stringify(
+            {
+                Author: login,
+                Text: submittedText,
+                Published: presentDate
+            }
+        );
 
-            fetch("https://doggyfoodyapi.azurewebsites.net/api/products/addComment?productId=" + productId + "&userId=" + userId, {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: data
-            }).then(res => res.json());
+        fetch("https://doggyfoodyapi.azurewebsites.net/api/products/addComment?productId=" + productId + "&userId=" + userId, {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: data
+        }).then(res => res.json());
 
-        });
+    });
 
-        setTimeout(refreshPage, 2000);
-        return false;
+    setTimeout(refreshPage, 2000);
+    return false;
 }
 
 function rate(rating) {
@@ -178,24 +184,23 @@ function rate(rating) {
         body: data
     }).then(res => res.json());
 
-        document.getElementById("ProductRating").innerHTML = "Thank You!"
+    document.getElementById("ProductRating").innerHTML = "Thank You!"
 
-        setTimeout(refreshPage, 2000);
+    setTimeout(refreshPage, 2000);
 
 }
 
-function refreshPage()
-{
+function refreshPage() {
     location.reload();
 }
 
-function deleteComment(commentId){
+function deleteComment(commentId) {
 
     fetch("https://doggyfoodyapi.azurewebsites.net/api/products/deleteComment?id=" + commentId, {
         method: 'delete'
     }).then(res => res.json());
 
-    document.getElementById("Comment"+commentId).style.textDecoration = "line-through";
+    document.getElementById("Comment" + commentId).style.textDecoration = "line-through";
 
     setTimeout(refreshPage, 1000);
 
