@@ -68,7 +68,7 @@ function loadComments(productJson) {
     let html = "";
     let userType = null;
     let userLogin = null;
-    if ("UserLogin" in localStorage) {
+    if ("UserLogin" in sessionStorage) {
         userType = sessionStorage.getItem("UserType");
         userLogin = sessionStorage.getItem("UserLogin");
     } 
