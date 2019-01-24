@@ -13,4 +13,11 @@ function logout(){
     
         document.getElementById("LogoutMainBlockDiv").innerHTML="You must sign in first!"
     }
+
+    setTimeout(redirectToMain, 2000);
+}
+
+function redirectToMain()
+{
+    window.location.replace("./index.html")
 }

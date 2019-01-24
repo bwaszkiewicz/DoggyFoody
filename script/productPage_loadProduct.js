@@ -45,6 +45,7 @@ function generatePage() {
                 }
             }
             html += "</span>";
+            html += "<span> ("+product.Rates.length+" votes)</span>"
             html += "</p>";
 
             html += "<p id='ProductManufacturer'><b>Manufacturer: </b> " + manufacturerJson.Name + "</p>";
@@ -56,34 +57,38 @@ function generatePage() {
 
             document.getElementById("ProductDiv").innerHTML = html;
 
-            html = "";
-
-            if (product.Comments == null || JSON.stringify(product.Comments) == "[]") {
-                html += "<div id='Comment'>"
-                html += "<div id='UserComment'>"
-                html += "<article class='Article'>" + "There are no comments for this product yet. Be first to add yours below!" + "</article>"
-                html += "</div>"
-                html += "</div>"
-            }
-            else {
-                for (var m = 0; m < product.Comments.length; m++) {
-                    html += "<div id='Comment'>"
-                    html += "<div id='UserInfo'>"
-                    html += "<p id='Username'><b>" + product.Comments[m].Author + "</b></p>"
-                    html += "<p id='UserGroup'>" + product.Comments[m].Published.substring(0, 10) + "</p>"
-                    html += "</div>"
-                    html += "<hr>"
-                    html += "<div id='UserComment'>"
-                    html += "<article class='Article'>" + product.Comments[m].Text + "</article>"
-                    html += "</div>"
-                    html += "</div>"
-                }
-            }
-            document.getElementById("CommentsDiv").innerHTML = html;
+            loadComments(product);
         });
     });
 
     setUserCommentSection();
+}
+
+function loadComments(productJson){
+    let html = "";
+
+    if (productJson.Comments == null || JSON.stringify(productJson.Comments) == "[]") {
+        html += "<div id='Comment'>"
+        html += "<div id='UserComment'>"
+        html += "<article class='Article'>" + "There are no comments for this product yet. Be first to add yours below!" + "</article>"
+        html += "</div>"
+        html += "</div>"
+    }
+    else {
+        for (var m = 0; m < productJson.Comments.length; m++) {
+            html += "<div id='Comment'>"
+            html += "<div id='UserInfo'>"
+            html += "<p id='Username'><b>" + productJson.Comments[m].Author + "</b></p>"
+            html += "<p id='UserGroup'>" + productJson.Comments[m].Published.substring(0, 10) + "</p>"
+            html += "</div>"
+            html += "<hr>"
+            html += "<div id='UserComment'>"
+            html += "<article class='Article'>" + productJson.Comments[m].Text + "</article>"
+            html += "</div>"
+            html += "</div>"
+        }
+    }
+    document.getElementById("CommentsDiv").innerHTML = html;
 }
 
 function setUserCommentSection() {
@@ -146,9 +151,9 @@ function addComment() {
                 body: data
             }).then(res => res.json());
 
-        }).catch(console.log);
+        });
 
-        document.getElementById("AddCommentDiv").innerHTML = "<div class='SeparateLink'><a href="+location.href+">» Thank You! «</a></div>"
+        setTimeout(refreshPage, 2000);
         return false;
 }
 
@@ -168,4 +173,12 @@ function rate(rating) {
     }).then(res => res.json());
 
         document.getElementById("ProductRating").innerHTML = "Thank You!"
+
+        setTimeout(refreshPage, 2000);
+
+}
+
+function refreshPage()
+{
+    location.reload();
 }

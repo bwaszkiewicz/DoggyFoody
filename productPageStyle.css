@@ -134,12 +134,24 @@
 #RatingContainer{
     unicode-bidi: bidi-override;
     direction: rtl;
-    font-size: 16pt;
+    font-size: 18pt;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+#ProductRating{
+    display: inline-flex;
+    align-items: center;
+  justify-content: flex-start;
+    direction: ltr;
 }
 
 #RatingContainer > .Rating {
+
     display: inline-block;
     position: relative;
+    top: -3px;
 }
 
   #RatingContainer > .Rating:hover:before,
@@ -223,15 +235,12 @@
 
 #AddCommentSection input{
     margin-left: auto;
-    margin-right: auto;
 }
 
 #AddCommentSection #submitComment{
-    float: right;
     position: relative;
+    float: right;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto; 
     font-size: 12pt;
     text-decoration: none;
     padding: 0.4vw 1.6vw;   

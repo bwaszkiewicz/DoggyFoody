@@ -36,8 +36,16 @@
 }
 
 .MainLogoutBlock div{
-    width: 100%;
-    display: inline-block;
+    position: relative;
     overflow:auto;
-    color:red;
+    color:var(--background-color2);
+    text-align: center;
+    padding-bottom: 2vw;
+    padding-top: 2vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.MainLogoutBlock div p{
+    margin: 2vw;
 }
