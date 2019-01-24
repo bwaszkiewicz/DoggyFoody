@@ -21,10 +21,11 @@
     font-size: 16pt;
     background-color: var(--background-color1);
     color: var(--foreground-color1);
-    text-indent: 10px;
     position: relative;
     top: -1px;
     padding: 10px;
+    padding-left: 20px;
+    padding-right: 5vw;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     -webkit-touch-callout: none;
