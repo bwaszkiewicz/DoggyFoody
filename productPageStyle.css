@@ -161,7 +161,7 @@
      position: absolute;
 }
 
-.WindowNews #Comment{
+.WindowNews .Comment{
     display: flex;
     margin-bottom: 2vw;
     background-color: #fff8dd;
@@ -170,18 +170,18 @@
     border: 2px solid var(--foreground-color2);
 }
 
-.WindowNews #Comment  p{
+.WindowNews .Comment  p{
     color: var(--background-color2);
     margin: 0px;
 } 
 
-.WindowNews #Comment  hr{
+.WindowNews .Comment  hr{
     color: var(--foreground-color2);
     margin: 0px;
     border: 1px solid var(--foreground-color2);
 } 
 
-.WindowNews #Comment #UserInfo{
+.WindowNews .Comment #UserInfo{
     min-width: 100pt;
     max-width: 100pt;
     margin: 1vw;
@@ -193,18 +193,35 @@
     justify-items: center;
 } 
 
-.WindowNews #Comment #UserInfo #Username{
+.WindowNews .Comment #UserInfo #Username{
     color: var(--shadow-color1);
     font-size: 12pt;
     padding-bottom: 10px;
 } 
 
-.WindowNews #Comment #UserInfo #UserGroup{
+.WindowNews .Comment #UserInfo #UserGroup{
     color: var(--background-color1);
     font-size: 10pt;
+    padding-bottom: 10px;
 } 
 
-.WindowNews #Comment #UserComment{
+.WindowNews .Comment #UserInfo #DeleteComment{
+    color: crimson;
+    font-size: 8pt;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.WindowNews .Comment #UserInfo #DeleteComment:hover{
+    color:darkred;
+    text-decoration: underline;
+}
+
+.WindowNews .Comment #UserComment{
     width:auto;
     margin: 1vw;
     display: flex;

@@ -54,6 +54,8 @@ function checkSignIn(login, psw){
             }
             sessionStorage.setItem("SignIn", "1");
             sessionStorage.setItem("UserId", data.Id);
+            sessionStorage.setItem("UserLogin", login);
+            sessionStorage.setItem("UserType", data.UserType);
             window.location.href = "index.html";
         } else {
             document.getElementById("wrongLoginPswHint").innerHTML="Wrong login / password!";

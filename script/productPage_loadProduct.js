@@ -66,6 +66,9 @@ function generatePage() {
 
 function loadComments(productJson){
     let html = "";
+    let userId = sessionStorage.getItem("UserId").toString();
+    let userType = sessionStorage.getItem("UserType").toString();
+    let userLogin = sessionStorage.getItem("UserLogin").toString();
 
     if (productJson.Comments == null || JSON.stringify(productJson.Comments) == "[]") {
         html += "<div id='Comment'>"
@@ -76,10 +79,13 @@ function loadComments(productJson){
     }
     else {
         for (var m = 0; m < productJson.Comments.length; m++) {
-            html += "<div id='Comment'>"
+            html += "<div class='Comment' id='Comment"+productJson.Comments[m].Id+"'>"
             html += "<div id='UserInfo'>"
             html += "<p id='Username'><b>" + productJson.Comments[m].Author + "</b></p>"
             html += "<p id='UserGroup'>" + productJson.Comments[m].Published.substring(0, 10) + "</p>"
+            if(productJson.Comments[m].Author == userLogin || userType == 3 || userType == 7){
+            html += "<p id='DeleteComment' onclick='deleteComment("+productJson.Comments[m].Id+")'>Delete comment</p>"
+            }
             html += "</div>"
             html += "<hr>"
             html += "<div id='UserComment'>"
@@ -181,4 +187,16 @@ function rate(rating) {
 function refreshPage()
 {
     location.reload();
+}
+
+function deleteComment(commentId){
+
+    fetch("https://doggyfoodyapi.azurewebsites.net/api/products/deleteComment?id=" + commentId, {
+        method: 'delete'
+    }).then(res => res.json());
+
+    document.getElementById("Comment"+commentId).style.textDecoration = "line-through";
+
+    setTimeout(refreshPage, 1000);
+
 }
