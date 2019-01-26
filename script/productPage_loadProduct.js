@@ -107,7 +107,7 @@ function setUserCommentSection() {
     let html = "";
 
     //check if logged in
-    if (sessionStorage.getItem("SignIn") == "1") {
+    if (sessionStorage.getItem("UserId") != null) {
 
         html += "<div id='AddCommentSection'>";
         html += "<h1 id='AddYourCommentHeader'>Add your comment</h1 >";

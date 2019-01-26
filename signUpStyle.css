@@ -44,6 +44,12 @@
     padding: 3px;
 }
 
+.MainSignUpBlock span{
+    display: inline;
+    position: relative;
+    font-size: 13px;
+}
+
 .MainSignUpBlock .inputText{
     width: 200px;
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="signUpStyle.css">
     <link rel="shortcut icon" href="./img/doggy_icon.ico"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">  
-    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src="./script/signUp_addUser.js"></script>
     <script type="text/javascript" src="./script/sessionMechanism.js"></script>
 </head>
 
@@ -69,17 +69,30 @@
             <section class="MainSignUpBlock">
                     <h1>Sign up</h1>
                     <div id="signUpMainBlockDiv">
-                        <form>
+                        <form form method="POST"  action="" onsubmit="return false">
+
                             <p>Login</p>
-                            <input type="text" id="loginSignUp" class="inputText">
+                            <input type="text" id="loginSignUp" class="inputText"
+                                onfocus="document.getElementById('loginErrorSpan').style.display = 'none'">
+                            <span id="loginErrorSpan"></span>
+
                             <p>Password</p>
-                            <input type="password" id="pswSignUp" class="inputText">
+                            <input type="password" id="pswSignUp" class="inputText"
+                                onfocus="document.getElementById('passwordErrorSpan').style.display = 'none'">
+                            <span id="passwordErrorSpan"></span>
+
                             <p>Confirm Password</p>
-                            <input type="password" id="confirmPswSignUp" class="inputText">
+                            <input type="password" id="confirmPswSignUp" class="inputText"
+                                onfocus="document.getElementById('ConfirmPswErrorSpan').style.display = 'none'">
+                            <span id="ConfirmPswErrorSpan"></span>
+
                             <p>E-mail</p>
-                            <input type="text" id="emailSignUp" class="inputText"> 
+                            <input type="text" id="emailSignUp" class="inputText"
+                                onfocus="document.getElementById('EmailErrorSpan').style.display = 'none'"> 
+                            <span id="EmailErrorSpan"></span>
+
                             <br/>
-                            <input type="submit" value="Sign up" id="submitSignUp">
+                            <input type="submit" value="Sign up" id="submitSignUp" onclick="addUser()">
                         </form>
                     </div>
                 </section>
