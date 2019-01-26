@@ -21,13 +21,28 @@ function setCookie(cname, cvalue, exdays) {
   }
 
 function checkCookies(){
-    if(sessionStorage.getItem("SignIn") == "1"){
-        document.getElementById("LinkBarTableFirstLink").href="UserPanel.html";
-        document.getElementById("LinkBarTableFirstText").innerHTML="User Panel";
-        document.getElementById("LinkBarTableSecondLink").href="Logout.html";
-        document.getElementById("LinkBarTableSecondText").innerHTML="Logout";
+    if(sessionStorage.getItem("UserID") != null){
+        if(sessionStorage.getItem("UserType") == "User"){
+            document.getElementById("LinkBarTableFirstLink").href="UserPanel.html";
+            document.getElementById("LinkBarTableFirstText").innerHTML="User Panel";
+            document.getElementById("LinkBarTableSecondLink").href="Logout.html";
+            document.getElementById("LinkBarTableSecondText").innerHTML="Logout";
+        }
+        if(sessionStorage.getItem("UserType") == "Admin"){
+            document.getElementById("LinkBarTableFirstLink").href="AdminPanel.html";
+            document.getElementById("LinkBarTableFirstText").innerHTML="Admin Panel";
+            document.getElementById("LinkBarTableSecondLink").href="Logout.html";
+            document.getElementById("LinkBarTableSecondText").innerHTML="Logout";
+        }
+        if(sessionStorage.getItem("UserType") == "HeadAdmin"){
+            document.getElementById("LinkBarTableFirstLink").href="HeadAdminPanel.html";
+            document.getElementById("LinkBarTableFirstText").innerHTML="Head Admin Panel";
+            document.getElementById("LinkBarTableSecondLink").href="Logout.html";
+            document.getElementById("LinkBarTableSecondText").innerHTML="Logout";
+        }
 
         document.getElementById("signInMainBlockDiv").innerHTML="You are already sign in!";
+
     } else {
         document.getElementById("LinkBarTableFirstLink").href="SignIn.html";
         document.getElementById("LinkBarTableFirstText").innerHTML="Sign In ";
@@ -52,7 +67,6 @@ function checkSignIn(login, psw){
             if(document.getElementById("rememberCheckbox").checked == true) {
                 setCookie("userlogin",document.getElementById("loginSignIn").value,1);
             }
-            sessionStorage.setItem("SignIn", "1");
             sessionStorage.setItem("UserId", data.Id);
             sessionStorage.setItem("UserLogin", login);
             sessionStorage.setItem("UserType", data.UserType);

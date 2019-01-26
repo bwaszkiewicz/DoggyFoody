@@ -1,5 +1,5 @@
 function logout(){
-    if(sessionStorage.getItem("SignIn") != null){
+    if(sessionStorage.getItem("UserId") != null){
         document.getElementById("LinkBarTableFirstLink").href="SignIn.html";
         document.getElementById("LinkBarTableFirstText").innerHTML="Sign In ";
         document.getElementById("LinkBarTableSecondLink").href="SignUp.html";
