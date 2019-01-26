@@ -1,4 +1,4 @@
-var websites = {
+var websitesEnum = {
     index: 0,
     signIn: 1,
     signUp: 2,
@@ -14,9 +14,15 @@ var websites = {
     stories: 12,
 };
 
+var UserTypeEnum = {
+    User: 1,
+    Admin: 3,
+    HeadAdmin: 7,
+}
+
 function checkSession(website) {
     if (sessionStorage.getItem("UserId") != null){
-        if(sessionStorage.getItem("UserType") == "User"){
+        if(sessionStorage.getItem("UserType") == UserTypeEnum.User){
             document.getElementById("LinkBarTableFirstLink").href="UserPanel.html";
             document.getElementById("LinkBarTableFirstText").innerHTML="User Panel";
             document.getElementById("LinkBarTableSecondLink").href="Logout.html";
@@ -24,16 +30,16 @@ function checkSession(website) {
 
                 // User's rights regarding websites
 
-            if(website == websites.adminPanel){
+            if(website == websitesEnum.adminPanel){
                 document.getElementById("AdminPanelMainBlockDiv").innerHTML="Access denied";
             }
             
-            if(website == websites.headAdminPanel){
+            if(website == websitesEnum.headAdminPanel){
                 document.getElementById("HeadAdminPanelMainBlockDiv").innerHTML="Access denied";
             }
             
         }
-        if(sessionStorage.getItem("UserType") == "Admin"){
+        if(sessionStorage.getItem("UserType") == UserTypeEnum.Admin){
             document.getElementById("LinkBarTableFirstLink").href="AdminPanel.html";
             document.getElementById("LinkBarTableFirstText").innerHTML="Admin Panel";
             document.getElementById("LinkBarTableSecondLink").href="Logout.html";
@@ -41,12 +47,12 @@ function checkSession(website) {
 
                 // Admin's rights regarding websites
 
-            if(website == websites.headAdminPanel){
+            if(website == websitesEnum.headAdminPanel){
                 document.getElementById("HeadAdminPanelMainBlockDiv").innerHTML="Access denied";
             }
 
         }
-        if(sessionStorage.getItem("UserType") == "HeadAdmin"){
+        if(sessionStorage.getItem("UserType") == UserTypeEnum.HeadAdmin){
             document.getElementById("LinkBarTableFirstLink").href="HeadAdminPanel.html";
             document.getElementById("LinkBarTableFirstText").innerHTML="Head Admin Panel";
             document.getElementById("LinkBarTableSecondLink").href="Logout.html";
@@ -58,7 +64,7 @@ function checkSession(website) {
 
                 // Sign in user's rights regarding websites
 
-        if(website == websites.signUp){
+        if(website == websitesEnum.signUp){
             document.getElementById("signUpMainBlockDiv").innerHTML="You are already sign in!";
         }
 
@@ -70,13 +76,13 @@ function checkSession(website) {
 
                 // Not sign in user's rights regarding websites
 
-        if(website == websites.userPanel){
+        if(website == websitesEnum.userPanel){
             document.getElementById("UserPanelMainBlockDiv").innerHTML="Access denied";
         }
-        if(website == websites.adminPanel){
+        if(website == websitesEnum.adminPanel){
             document.getElementById("AdminPanelMainBlockDiv").innerHTML="Access denied";
         }
-        if(website == websites.headAdminPanel){
+        if(website == websitesEnum.headAdminPanel){
             document.getElementById("HeadAdminPanelMainBlockDiv").innerHTML="Access denied";
         }
     }

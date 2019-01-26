@@ -22,19 +22,19 @@ function setCookie(cname, cvalue, exdays) {
 
 function checkCookies(){
     if(sessionStorage.getItem("UserID") != null){
-        if(sessionStorage.getItem("UserType") == "User"){
+        if(sessionStorage.getItem("UserType") == UserTypeEnum.User){
             document.getElementById("LinkBarTableFirstLink").href="UserPanel.html";
             document.getElementById("LinkBarTableFirstText").innerHTML="User Panel";
             document.getElementById("LinkBarTableSecondLink").href="Logout.html";
             document.getElementById("LinkBarTableSecondText").innerHTML="Logout";
         }
-        if(sessionStorage.getItem("UserType") == "Admin"){
+        if(sessionStorage.getItem("UserType") == UserTypeEnum.Admin){
             document.getElementById("LinkBarTableFirstLink").href="AdminPanel.html";
             document.getElementById("LinkBarTableFirstText").innerHTML="Admin Panel";
             document.getElementById("LinkBarTableSecondLink").href="Logout.html";
             document.getElementById("LinkBarTableSecondText").innerHTML="Logout";
         }
-        if(sessionStorage.getItem("UserType") == "HeadAdmin"){
+        if(sessionStorage.getItem("UserType") == UserTypeEnum.HeadAdmin){
             document.getElementById("LinkBarTableFirstLink").href="HeadAdminPanel.html";
             document.getElementById("LinkBarTableFirstText").innerHTML="Head Admin Panel";
             document.getElementById("LinkBarTableSecondLink").href="Logout.html";
