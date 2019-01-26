@@ -21,7 +21,7 @@ function setCookie(cname, cvalue, exdays) {
   }
 
 function checkCookies(){
-    if(sessionStorage.getItem("UserID") != null){
+    if(sessionStorage.getItem("UserId") != null){
         if(sessionStorage.getItem("UserType") == UserTypeEnum.User){
             document.getElementById("LinkBarTableFirstLink").href="UserPanel.html";
             document.getElementById("LinkBarTableFirstText").innerHTML="User Panel";
