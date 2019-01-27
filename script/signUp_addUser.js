@@ -40,26 +40,34 @@ if(accountValidationResult.size == 0){
 
     if(accountValidationResult.has(validationErrorCode.noLogin)){
         document.getElementById("loginErrorSpan").innerHTML = "You must enter a login!";
+        document.getElementById("loginErrorSpan").style.display = "inline";
     }
     
     if(accountValidationResult.has(validationErrorCode.noPassword)){
         document.getElementById("passwordErrorSpan").innerHTML = "You must enter a password!";
+        document.getElementById("passwordErrorSpan").style.display = "inline";
     }
     
     if(accountValidationResult.has(validationErrorCode.noConfirmPassword)){
         document.getElementById("ConfirmPswErrorSpan").innerHTML = "You must enter a confirm password!";
+        document.getElementById("ConfirmPswErrorSpan").style.display = "inline";
     }
     
     if(accountValidationResult.has(validationErrorCode.notEqualPasswords)){
-        
+        document.getElementById("passwordErrorSpan").innerHTML = "The passwords are not the same!";
+        document.getElementById("ConfirmPswErrorSpan").innerHTML = "The passwords are not the same!";
+        document.getElementById("passwordErrorSpan").style.display = "inline";
+        document.getElementById("ConfirmPswErrorSpan").style.display = "inline";
     }
     
     if(accountValidationResult.has(validationErrorCode.noEmail)){
         document.getElementById("EmailErrorSpan").innerHTML = "You must enter a e-mail!";
+        document.getElementById("EmailErrorSpan").style.display = "inline";
     }
     
     if(accountValidationResult.has(validationErrorCode.wrongEmailFormat)){
-        
+        document.getElementById("EmailErrorSpan").innerHTML = "Wrong email address format";
+        document.getElementById("EmailErrorSpan").style.display = "inline";
     }
 }
 }
@@ -104,6 +112,8 @@ function accountValidation(){
 
 function toSignUpResult()
 {
+
+    document.getElementById("signUpMainBlockDiv").innerHTML = "The account has been registered correctly.";
     //window.location.replace("./index.html")
 }
 
