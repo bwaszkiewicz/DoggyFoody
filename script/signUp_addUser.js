@@ -34,7 +34,7 @@ if(accountValidationResult.size == 0){
             body: data
         }).then(res => res.json());
 
-        setTimeout(toSignUpResult, 2000);
+        setTimeout(toSignUpResult, 4000);
 
 } else {
 
@@ -125,14 +125,18 @@ function toSignUpResult()
                 sessionStorage.setItem("UserId", data.Id);
                 sessionStorage.setItem("UserLogin", login);
                 sessionStorage.setItem("UserType", data.UserType);
-                window.location.href = "index.html";
             }
         });
 
-        
-        document.getElementById("signUpMainBlockDiv").innerHTML = "The account has been registered correctly.";
-        document.getElementById("signUpMainBlockDiv").style.color = "#29432c";
-        
+        let mainBlockDivHanderl = document.getElementById("signUpMainBlockDiv");
+
+        mainBlockDivHanderl.innerHTML = "The account has been registered correctly. </br> You have been logged in automatically.";
+        mainBlockDivHanderl.style.color = "#29432c";
+        mainBlockDivHanderl.style.textAlign = "center";
+        mainBlockDivHanderl.style.paddingBottom = "2vw";
+        mainBlockDivHanderl.style.paddingTop = "2vw";
+
+
     //window.location.replace("./index.html")
 }
 
