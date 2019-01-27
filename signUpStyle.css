@@ -36,8 +36,6 @@
 
 .MainSignUpBlock input{
     color: var(--shadow-color1);
-    display: block;
-    margin-right: auto;
     margin-left: 15px;
     margin-top: 5px;
     margin-bottom: 10px;
@@ -45,13 +43,18 @@
 }
 
 .MainSignUpBlock span{
-    display: inline;
-    position: relative;
-    font-size: 13px;
+    font-size: 10px;
 }
 
 .MainSignUpBlock .inputText{
     width: 200px;
+
+    border-radius: 5px;
+    border: 2px solid var(--foreground-color2);
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: white;
+    color: var(--background-color2);
 }
 
 .MainSignUpBlock p{
@@ -75,8 +78,10 @@
 .MainSignUpBlock #submitSignUp{
     position: relative;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto; 
+    left: 50%;
+    transform:translateX(-50%);
+    margin-left: 0px;
+    margin-top: 1vw;
     font-size: 14pt;
     text-decoration: none;
     padding: 0.5vw 2vw;   
@@ -89,4 +94,9 @@
 .MainSignUpBlock #submitSignUp:hover{
     background-color: var(--foreground-color2);
     text-shadow: none;
+}
+
+.InputErrorDiv{
+    display: flex;
+    flex-direction: column;
 }

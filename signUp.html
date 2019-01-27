@@ -1,114 +1,134 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Doggy Foody</title>
-    <link rel="stylesheet" type="text/css" href="signUpStyle.css">
-    <link rel="shortcut icon" href="./img/doggy_icon.ico"/>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">  
-    <script type="text/javascript" src="./script/signUp_addUser.js"></script>
-    <script type="text/javascript" src="./script/sessionMechanism.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Doggy Foody</title>
+        <link rel="stylesheet" type="text/css" href="signUpStyle.css">
+        <link rel="shortcut icon" href="./img/doggy_icon.ico" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:600"
+            rel="stylesheet">
+        <script type="text/javascript" src="./script/signUp_addUser.js"></script>
+        <script type="text/javascript" src="./script/sessionMechanism.js"></script>
+    </head>
 
-<body onload="checkSession(websitesEnum.signUp)">
+    <body onload="checkSession(websitesEnum.signUp)">
 
-    <!-- Top bar section -->
-    <header>
-        <section class="TopBarButton" id="StoriesSection">
-            <a href="Stories.html"> Doggy Stories </a>
-        </section>
+        <!-- Top bar section -->
+        <header>
+            <section class="TopBarButton" id="StoriesSection">
+                <a href="Stories.html"> Doggy Stories </a>
+            </section>
 
-        <section class="TopBarButton" id="ManufacturerSection">
-            <a href="Manufacturers.html"> Manufacturers </a>
-        </section>
+            <section class="TopBarButton" id="ManufacturerSection">
+                <a href="Manufacturers.html"> Manufacturers </a>
+            </section>
 
-        <section class="TopBarButton" id="DryFoodSection">
-            <a href="DryFood.html"> Dry food </a>
-        </section>
+            <section class="TopBarButton" id="DryFoodSection">
+                <a href="DryFood.html"> Dry food </a>
+            </section>
 
-        <section class="TopBarButton" id="WetFoodSection">
-            <a href="WetFood.html"> Wet food </a>
-        </section>
+            <section class="TopBarButton" id="WetFoodSection">
+                <a href="WetFood.html"> Wet food </a>
+            </section>
 
-    </header> 
-    
-    <!-- Link bar under Top bar-->
-    <div id="LinkBar">
-        <table id="LinkBarTable">
-            <tr>
-                <td>
-                    <a id="LinkBarTableFirstLink" href="SignIn.html"><b id="LinkBarTableFirstText"></b></a>
-                 </td>
-                 <td class="LinkBarBreak">
-                     |
-                 </td>
-                 <td>
-                     <a id="LinkBarTableSecondLink" href="SignUp.html"><b id="LinkBarTableSecondText"></b></a>
-                 </td>
-            </tr>
-        </table>
-    </div>
+        </header>
 
-    <a href="index.html">
-        <div id="Logo">
-        </div>  
-    </a> 
-    
-    <!-- Ad box on the right-->
-    <section id="AdvertSection">
+        <!-- Link bar under Top bar-->
+        <div id="LinkBar">
+            <table id="LinkBarTable">
+                <tr>
+                    <td>
+                        <a id="LinkBarTableFirstLink" href="SignIn.html"><b
+                                id="LinkBarTableFirstText"></b></a>
+                    </td>
+                    <td class="LinkBarBreak">
+                        |
+                    </td>
+                    <td>
+                        <a id="LinkBarTableSecondLink" href="SignUp.html"><b
+                                id="LinkBarTableSecondText"></b></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <a href="index.html">
+            <div id="Logo">
+            </div>
+        </a>
+
+        <!-- Ad box on the right-->
+        <section id="AdvertSection">
             <div id="Advert">
-                    <a href="https://www.polsl.pl/wydzialy/rau/Strony/Witamy.aspx"><img src="./img/Ad1.png" alt="Advert"></a>
+                <a href="https://www.polsl.pl/wydzialy/rau/Strony/Witamy.aspx"><img
+                        src="./img/Ad1.png" alt="Advert"></a>
             </div>
         </section>
-        
-    <!-- Main block-->
-    <main>
+
+        <!-- Main block-->
+        <main>
 
             <!-- Section of sign up-->
             <section class="MainSignUpBlock">
-                    <h1>Sign up</h1>
-                    <div id="signUpMainBlockDiv">
-                        <form form method="POST"  action="" onsubmit="return false">
-
-                            <p>Login</p>
-                            <input type="text" id="loginSignUp" class="inputText"
-                                onfocus="document.getElementById('loginErrorSpan').style.display = 'none'">
+                <h1>Sign up</h1>
+                <div id="signUpMainBlockDiv">
+                    <form form method="POST" action="" onsubmit="return false">
+                        <p>Login</p>
+                        <div class="InputErrorDiv">
+                            <input type="text" id="loginSignUp"
+                                class="inputText"
+                                onfocus="document.getElementById('loginErrorSpan').style.display=
+                                'none'">
                             <span id="loginErrorSpan"></span>
-
-                            <p>Password</p>
-                            <input type="password" id="pswSignUp" class="inputText"
-                                onfocus="document.getElementById('passwordErrorSpan').style.display = 'none'">
+                        </div>
+                        <p>Password</p>
+                        <div class="InputErrorDiv">
+                            <input type="password" id="pswSignUp"
+                                class="inputText"
+                                onfocus="document.getElementById('passwordErrorSpan').style.display=
+                                'none'">
                             <span id="passwordErrorSpan"></span>
+                        </div>
 
-                            <p>Confirm Password</p>
-                            <input type="password" id="confirmPswSignUp" class="inputText"
-                                onfocus="document.getElementById('ConfirmPswErrorSpan').style.display = 'none'">
+                        <p>Confirm Password</p>
+                        <div class="InputErrorDiv">
+                            <input type="password" id="confirmPswSignUp"
+                                class="inputText"
+                                onfocus="document.getElementById('ConfirmPswErrorSpan').style.display=
+                                'none'">
                             <span id="ConfirmPswErrorSpan"></span>
+                        </div>
 
-                            <p>E-mail</p>
-                            <input type="text" id="emailSignUp" class="inputText"
-                                onfocus="document.getElementById('EmailErrorSpan').style.display = 'none'"> 
+                        <p>E-mail</p>
+                        <div class="InputErrorDiv">
+                            <input type="text" id="emailSignUp"
+                                class="inputText"
+                                onfocus="document.getElementById('EmailErrorSpan').style.display=
+                                'none'">
                             <span id="EmailErrorSpan"></span>
+                        </div>
 
-                            <br/>
-                            <input type="submit" value="Sign up" id="submitSignUp" onclick="addUser()">
+                        <br/>
+                            <input type="submit" value="Sign up"
+                                id="submitSignUp" onclick="addUser()">
                         </form>
                     </div>
                 </section>
 
-    <!-- Footer -->
-    <br/><br/>
-    <footer>
-        <div id="FooterText">
-            © Doggy Foody Team<br><br>doggyfoody@mail.com<br>tel. +32 222222-22223
-    </div>
-    </footer>
+                <!-- Footer -->
+                <br/><br/>
+                        <footer>
+                            <div id="FooterText">
+                                © Doggy Foody Team<br><br>doggyfoody@mail.com<br>tel.
+                                +32 222222-22223
+                            </div>
+                        </footer>
 
-    </main>
+                    </main>
 
 
 
-</body>
+                </body>
 
-</html>
+            </html>

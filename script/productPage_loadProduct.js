@@ -71,7 +71,7 @@ function loadComments(productJson) {
     if ("UserLogin" in sessionStorage) {
         userType = sessionStorage.getItem("UserType");
         userLogin = sessionStorage.getItem("UserLogin");
-    } 
+    }
 
     if (productJson.Comments == null || JSON.stringify(productJson.Comments) == "[]") {
         html += "<div id='Comment'>"
@@ -86,20 +86,20 @@ function loadComments(productJson) {
             html += "<div id='UserInfo'>"
             html += "<p id='Username'><b>" + productJson.Comments[m].Author + "</b></p>"
             html += "<p id='UserGroup'>" + productJson.Comments[m].Published.substring(0, 10) + "</p>"
-            if (userType !== null && userLogin !== null) { 
-            if (productJson.Comments[m].Author == userLogin || userType == 3 || userType == 7) {
-                html += "<p id='DeleteComment' onclick='deleteComment(" + productJson.Comments[m].Id + ")'>Delete comment</p>"
+            if (userType !== null && userLogin !== null) {
+                if (productJson.Comments[m].Author == userLogin || userType == 3 || userType == 7) {
+                    html += "<p id='DeleteComment' onclick='deleteComment(" + productJson.Comments[m].Id + ")'>Delete comment</p>"
+                }
             }
+            html += "</div>"
+            html += "<hr>"
+            html += "<div id='UserComment'>"
+            html += "<article class='Article'>" + productJson.Comments[m].Text + "</article>"
+            html += "</div>"
+            html += "</div>"
         }
-        html += "</div>"
-        html += "<hr>"
-        html += "<div id='UserComment'>"
-        html += "<article class='Article'>" + productJson.Comments[m].Text + "</article>"
-        html += "</div>"
-        html += "</div>"
     }
-}
-document.getElementById("CommentsDiv").innerHTML = html;
+    document.getElementById("CommentsDiv").innerHTML = html;
 }
 
 function setUserCommentSection() {
@@ -112,7 +112,7 @@ function setUserCommentSection() {
         html += "<div id='AddCommentSection'>";
         html += "<h1 id='AddYourCommentHeader'>Add your comment</h1 >";
         //html += "<form name='submitComment' action='" + window.location + "' onsubmit='addComment()' method='post'>";
-        html += "<textarea id='commentText' rows = '5' maxlength = '256' ></textarea >";
+        html += "<textarea required id='commentText' rows = '5'  maxlength = '1024' ></textarea >";
         html += "<input type = 'button' value = 'Post' onclick='addComment()' id='submitComment'>";
         //html += "</form>";
         html += "</div>";
@@ -138,33 +138,35 @@ function addComment() {
 
     let submittedText = document.getElementById("commentText").value.toString();
 
-    fetch("https://doggyfoodyapi.azurewebsites.net/api/users?id=" + userId).then(function (response) {
-        return response.json();
-    }).then(function (myJson) {
+    if (submittedText.length > 0) {
+        fetch("https://doggyfoodyapi.azurewebsites.net/api/users?id=" + userId).then(function (response) {
+            return response.json();
+        }).then(function (myJson) {
 
-        let userJson = myJson;
-        let login = userJson.Login;
+            let userJson = myJson;
+            let login = userJson.Login;
 
-        let data = JSON.stringify(
-            {
-                Author: login,
-                Text: submittedText,
-                Published: presentDate
-            }
-        );
+            let data = JSON.stringify(
+                {
+                    Author: login,
+                    Text: submittedText,
+                    Published: presentDate
+                }
+            );
 
-        fetch("https://doggyfoodyapi.azurewebsites.net/api/products/addComment?productId=" + productId + "&userId=" + userId, {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: data
-        }).then(res => res.json());
+            fetch("https://doggyfoodyapi.azurewebsites.net/api/products/addComment?productId=" + productId + "&userId=" + userId, {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: data
+            }).then(res => res.json());
 
-    });
+        });
 
-    setTimeout(refreshPage, 2000);
+        setTimeout(refreshPage, 1000);
+    }
     return false;
 }
 

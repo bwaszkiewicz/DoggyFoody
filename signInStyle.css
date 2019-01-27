@@ -46,6 +46,13 @@
 
 .MainSignInBlock .inputText{
     width: 200px;
+
+    border-radius: 5px;
+    border: 2px solid var(--foreground-color2);
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: white;
+    color: var(--background-color2);
 }
 
 .MainSignInBlock p{
