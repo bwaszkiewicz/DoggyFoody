@@ -12,6 +12,7 @@ var websitesEnum = {
     manufacturers: 10,
     manufacturersPage: 11,
     stories: 12,
+    signUpAfterRegister: 13
 };
 
 var UserTypeEnum = {
@@ -66,6 +67,9 @@ function checkSession(website) {
 
         if(website == websitesEnum.signUp){
             document.getElementById("signUpMainBlockDiv").innerHTML="You are already sign in!";
+        }
+        if(website == websitesEnum.signIn){
+            document.getElementById("signInMainBlockDiv").innerHTML="You are already sign in!";
         }
 
     } else {

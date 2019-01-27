@@ -128,6 +128,8 @@ function toSignUpResult()
             }
         });
 
+        checkSession(websitesEnum.signUpAfterRegister);
+
         let mainBlockDivHanderl = document.getElementById("signUpMainBlockDiv");
 
         mainBlockDivHanderl.innerHTML = "The account has been registered correctly. </br> You have been logged in automatically.";
