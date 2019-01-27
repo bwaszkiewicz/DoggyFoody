@@ -112,8 +112,27 @@ function accountValidation(){
 
 function toSignUpResult()
 {
+        // Auto sign in
 
-    document.getElementById("signUpMainBlockDiv").innerHTML = "The account has been registered correctly.";
+    let login = document.getElementById("loginSignUp").value.toString();
+    let psw = document.getElementById("pswSignUp").value.toString();
+
+    fetch("https://doggyfoodyapi.azurewebsites.net/api/users/login?username="+login+"&password="+psw).then(function(response) {
+        return response.json();}).then(function(myJson){
+            var data = myJson;
+    
+            if(data.Login==login){
+                sessionStorage.setItem("UserId", data.Id);
+                sessionStorage.setItem("UserLogin", login);
+                sessionStorage.setItem("UserType", data.UserType);
+                window.location.href = "index.html";
+            }
+        });
+
+        
+        document.getElementById("signUpMainBlockDiv").innerHTML = "The account has been registered correctly.";
+        document.getElementById("signUpMainBlockDiv").style.color = "#29432c";
+        
     //window.location.replace("./index.html")
 }
 
