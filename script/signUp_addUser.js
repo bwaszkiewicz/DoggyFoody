@@ -136,7 +136,7 @@ function toSignUpResult()
         mainBlockDivHanderl.style.paddingBottom = "2vw";
         mainBlockDivHanderl.style.paddingTop = "2vw";
 
-        setTimeout(toSignUpResult, 3000);
+        setTimeout(redirectToMain, 3000);
 }
 
 function redirectToMain()
