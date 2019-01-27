@@ -11,8 +11,7 @@ var websitesEnum = {
     productPage: 9,
     manufacturers: 10,
     manufacturersPage: 11,
-    stories: 12,
-    signUpAfterRegister: 13
+    stories: 12
 };
 
 var UserTypeEnum = {
